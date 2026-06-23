@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Twisted Grounds | Artisanal Coffee & Fresh Baked Goods in Spring Garden, Philadelphia</title>
+  <meta name="description" content="Welcome to Twisted Grounds, your friendly neighborhood cafe in Spring Garden, Philadelphia. Enjoy handcrafted espresso, cold brew, and freshly baked pastries just steps from the Art Museum.">
+  <meta name="keywords" content="coffee shop Philadelphia, Spring Garden cafe, artisanal coffee, fresh pastries, espresso, cold brew, croissants, online ordering, neighborhood cafe">
+  <meta name="author" content="Twisted Grounds">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+    --primary: #6F4E37;
+    --secondary: #D4B896;
+    --accent: #C44536;
+    --background: #F8F4E9;
+    --text-dark: #2C1810;
+    --text-light: #5A4A3C;
+    --white: #FFFFFF;
+    --shadow: rgba(111, 78, 55, 0.1);
+    --transition: all 0.3s ease;
+    --border-radius: 12px;
+    --container-padding: 1.5rem;
+    }
+    
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    
+    html {
+    scroll-behavior: smooth;
+    }
+    
+    body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--background);
+    overflow-x: hidden;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    color: var(--primary);
+    }
+    
+    h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    }
+    
+    h2 {
+    font-size: 2rem;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+    }
+    
+    h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent);
+    }
+    
+    h3 {
+    font-size: 1.5rem;
+    }
+    
+    p {
+    margin-bottom: 1rem;
+    color: var(--text-light);
+    }
+    
+    a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+    }
+    
+    ul {
+    list-style: none;
+    }
+    
+    img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    }
+    
+    .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+    }
+    
+    .section {
+    padding: 4rem 0;
+    }
+    
+    .text-center {
+    text-align: center;
+    }
+    
+    .text-center h2:after {
+    left: 50%;
+    transform: translateX(-50%);
+    }
+    
+    .btn {
+    display: inline-block;
+    padding: 0.9rem 2rem;
+    background-color: var(--accent);
+    color: var(--white);
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.9rem;
+    text-align: center;
+    }
+    
+    .btn:hover {
+    background-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px var(--shadow);
+    }
+    
+    .btn-secondary {
+    background-color: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    }
+    
+    .btn-secondary:hover {
+    background-color: var(--primary);
+    color: var(--white);
+    }
+    
+    /* Header & Navigation */
+    header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--white);
+    box-shadow: 0 2px 10px var(--shadow);
+    transition: var(--transition);
+    }
+    
+    .header-scrolled {
+    padding: 0.5rem 0;
+    }
+    
+    .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem var(--container-padding);
+    }
+    
+    .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    }
+    
+    .logo span {
+    color: var(--accent);
+    }
+    
+    .nav-menu {
+    display: flex;
+    gap: 2rem;
+    }
+    
+    .nav-link {
+    font-weight: 700;
+    color: var(--text-light);
+    position: relative;
+    }
+    
+    .nav-link:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    transition: var(--transition);
+    }
+    
+    .nav-link:hover {
+    color: var(--primary);
+    }
+    
+    .nav-link:hover:after {
+    width: 100%;
+    }
+    
+    .mobile-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--primary);
+    cursor: pointer;
+    }
+    
+    /* Hero Section */
+    .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(rgba(248, 244, 233, 0.9), rgba(248, 244, 233, 0.8)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') no-repeat center center/cover;
+    padding-top: 80px;
+    }
+    
+    .hero-content {
+    max-width: 600px;
+    animation: fadeUp 1s ease-out;
+    }
+    
+    .hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    }
+    
+    .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--text-light);
+    }
+    
+    .hero-btns {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    }
+    
+    @keyframes fadeUp {
+    from {
+    opacity: 0;
+    transform: translateY(30px);
+    }
+    to {
+    opacity: 1;
+    transform: translateY(0);
+    }
+    }
+    
+    /* Trust Bar */
+    .trust-bar {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 1.5rem 0;
+    }
+    
+    .trust-items {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    }
+    
+    .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    }
+    
+    .trust-icon {
+    font-size: 1.8rem;
+    color: var(--secondary);
+    }
+    
+    .trust-text {
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    }
+    
+    /* Benefits */
+    .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    }
+    
+    .benefit-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 5px 15px var(--shadow);
+    transition: var(--transition);
+    }
+    
+    .benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px var(--shadow);
+    }
+    
+    .benefit-icon {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    }
+    
+    /* Services */
+    .services {
+    background-color: var(--white);
+    }
+    
+    .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    }
+    
+    .service-card {
+    background-color: var(--background);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 5px 15px var(--shadow);
+    transition: var(--transition);
+    }
+    
+    .service-card:hover {
+    transform: translateY(-5px);
+    }
+    
+    .service-img {
+    height: 200px;
+    background-color: var(--secondary);
+    background-size: cover;
+    background-position: center;
+    }
+    
+    .service-content {
+    padding: 1.5rem;
+    }
+    
+    /* About */
+    .about-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    align-items: center;
+    margin-top: 3rem;
+    }
+    
+    .about-img {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 15px 15px 0 var(--secondary);
+    }
+    
+    /* Testimonials */
+    .testimonials {
+    background-color: var(--white);
+    }
+    
+    .testimonial-slider {
+    max-width: 800px;
+    margin: 3rem auto 0;
+    position: relative;
+    overflow: hidden;
+    }
+    
+    .testimonial-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    }
+    
+    .testimonial-slide {
+    min-width: 100%;
+    padding: 2rem;
+    background-color: var(--background);
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px var(--shadow);
+    }
+    
+    .testimonial-text {
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    }
+    
+    .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    }
+    
+    .author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--primary);
+    }
+    
+    .slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    }
+    
+    .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--secondary);
+    cursor: pointer;
+    transition: var(--transition);
+    }
+    
+    .dot.active {
+    background-color: var(--accent);
+    transform: scale(1.2);
+    }
+    
+    /* Gallery */
+    .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 3rem;
+    }
+    
+    .gallery-item {
+    height: 250px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    position: relative;
+    }
+    
+    .gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+    }
+    
+    .gallery-item:hover .gallery-img {
+    transform: scale(1.1);
+    }
+    
+    /* FAQ */
+    .faq-container {
+    max-width: 800px;
+    margin: 3rem auto 0;
+    }
+    
+    .faq-item {
+    margin-bottom: 1rem;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 3px 10px var(--shadow);
+    }
+    
+    .faq-question {
+    padding: 1.5rem;
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 700;
+    }
+    
+    .faq-icon {
+    transition: var(--transition);
+    }
+    
+    .faq-answer {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    background-color: var(--white);
+    transition: max-height 0.3s ease;
+    }
+    
+    .faq-item.active .faq-answer {
+    max-height: 300px;
+    padding: 0 1.5rem 1.5rem;
+    }
+    
+    .faq-item.active .faq-icon {
+    transform: rotate(45deg);
+    }
+    
+    /* CTA */
+    .cta {
+    background: linear-gradient(rgba(111, 78, 55, 0.9), rgba(111, 78, 55, 0.9)), url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') no-repeat center center/cover;
+    color: var(--white);
+    text-align: center;
+    }
+    
+    .cta h2 {
+    color: var(--white);
+    }
+    
+    .cta h2:after {
+    background-color: var(--secondary);
+    }
+    
+    .cta p {
+    color: var(--secondary);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    }
+    
+    /* Footer */
+    footer {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 4rem 0 2rem;
+    }
+    
+    .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+    }
+    
+    .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    }
+    
+    .footer-logo span {
+    color: var(--secondary);
+    }
+    
+    .footer-about p {
+    color: var(--secondary);
+    }
+    
+    .footer-heading {
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    }
+    
+    .footer-links li {
+    margin-bottom: 0.8rem;
+    }
+    
+    .footer-links a {
+    color: var(--secondary);
+    transition: var(--transition);
+    }
+    
+    .footer-links a:hover {
+    color: var(--white);
+    padding-left: 5px;
+    }
+    
+    .contact-info li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    color: var(--secondary);
+    }
+    
+    .contact-icon {
+    color: var(--accent);
+    margin-top: 3px;
+    }
+    
+    .social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    }
+    
+    .social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(212, 184, 150, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    }
+    
+    .social-link:hover {
+    background-color: var(--accent);
+    transform: translateY(-3px);
+    }
+    
+    .copyright {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(212, 184, 150, 0.2);
+    color: var(--secondary);
+    font-size: 0.9rem;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+    h1 {
+    font-size: 2.8rem;
+    }
+    
+    h2 {
+    font-size: 1.8rem;
+    }
+    }
+    
+    @media (max-width: 768px) {
+    .mobile-toggle {
+    display: block;
+    }
+    
+    .nav-menu {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    flex-direction: column;
+    background-color: var(--white);
+    text-align: center;
+    padding: 2rem 0;
+    box-shadow: 0 10px 15px var(--shadow);
+    transition: var(--transition);
+    z-index: 999;
+    }
+    
+    .nav-menu.active {
+    left: 0;
+    }
+    
+    .nav-link {
+    padding: 1rem 0;
+    display: block;
+    }
+    
+    .hero h1 {
+    font-size: 2.5rem;
+    }
+    
+    .hero-btns {
+    flex-direction: column;
+    align-items: flex-start;
+    }
+    
+    .trust-items {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    }
+    
+    .section {
+    padding: 3rem 0;
+    }
+    }
+    
+    @media (max-width: 576px) {
+    .container {
+    padding: 0 1rem;
+    }
+    
+    h1 {
+    font-size: 2.2rem;
+    }
+    
+    h2 {
+    font-size: 1.6rem;
+    }
+    
+    .hero {
+    padding-top: 100px;
+    }
+    }
+    
+    /* Accessibility */
+    .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+    }
+    
+    :focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+<!-- Header -->
+<header id="header">
+<div class="container nav-container">
+  <a href="#" class="logo">Twisted <span>Grounds</span>
+  </a>
+  <div class="mobile-toggle" id="mobileToggle">
+    <i class="fas fa-bars">
+    </i>
+  </div>
+  <nav>
+    <ul class="nav-menu" id="navMenu">
+      <li>
+        <a href="#home" class="nav-link">Home</a>
+        </li>
+        <li>
+          <a href="#services" class="nav-link">Services</a>
+          </li>
+          <li>
+            <a href="#about" class="nav-link">About</a>
+            </li>
+            <li>
+              <a href="#testimonials" class="nav-link">Testimonials</a>
+              </li>
+              <li>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                </li>
+                <li>
+                  <a href="#contact" class="nav-link">Contact</a>
+                  </li>
+                  <li>
+                    <a href="#order" class="btn">Order Now</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </header>
+            
+            <!-- Hero Section -->
+            <section class="hero" id="home">
+              <div class="container">
+                <div class="hero-content">
+                  <h1>Artisanal Coffee & Fresh Baked Goods in Spring Garden</h1>
+                    <p>Welcome to Twisted Grounds, your friendly neighborhood cafe in Philadelphia. We serve handcrafted espresso drinks, cold brew coffee, and freshly baked pastries just steps from the Philadelphia Museum of Art.</p>
+                    <div class="hero-btns">
+                      <a href="#order" class="btn">Order Online</a>
+                        <a href="#menu" class="btn btn-secondary">View Menu</a>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  
+                  <!-- Trust Bar -->
+                  <section class="trust-bar">
+                    <div class="container">
+                      <div class="trust-items">
+                        <div class="trust-item">
+                          <i class="fas fa-map-marker-alt trust-icon">
+                          </i>
+                          <div class="trust-text">Steps from the Art Museum</div>
+                          </div>
+                          <div class="trust-item">
+                            <i class="fas fa-coffee trust-icon">
+                            </i>
+                            <div class="trust-text">Handcrafted Coffee</div>
+                            </div>
+                            <div class="trust-item">
+                              <i class="fas fa-bread-slice trust-icon">
+                              </i>
+                              <div class="trust-text">Freshly Baked Daily</div>
+                              </div>
+                              <div class="trust-item">
+                                <i class="fas fa-mobile-alt trust-icon">
+                                </i>
+                                <div class="trust-text">Online Ordering</div>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                          
+                          <!-- Benefits -->
+                          <section class="section" id="benefits">
+                            <div class="container text-center">
+                              <h2>Why Choose Twisted Grounds</h2>
+                                <p>Experience the perfect blend of quality, convenience, and community at your local Spring Garden cafe.</p>
+                                <div class="benefits-grid">
+                                  <div class="benefit-card">
+                                    <i class="fas fa-map-pin benefit-icon">
+                                    </i>
+                                    <h3>Prime Location</h3>
+                                      <p>Conveniently located steps from the Philadelphia Museum of Art in the heart of Spring Garden.</p>
+                                    </div>
+                                    <div class="benefit-card">
+                                      <i class="fas fa-star benefit-icon">
+                                      </i>
+                                      <h3>Artisanal Quality</h3>
+                                        <p>Every coffee is handcrafted with care, and our pastries are baked fresh daily using quality ingredients.</p>
+                                      </div>
+                                      <div class="benefit-card">
+                                        <i class="fas fa-users benefit-icon">
+                                        </i>
+                                        <h3>Community Focus</h3>
+                                          <p>We're more than just a cafe—we're a gathering place for neighbors, professionals, and visitors alike.</p>
+                                        </div>
+                                        <div class="benefit-card">
+                                          <i class="fas fa-clock benefit-icon">
+                                          </i>
+                                          <h3>Convenient Ordering</h3>
+                                            <p>Skip the line with our easy online ordering system for quick pickup of your favorite drinks and pastries.</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </section>
+                                    
+                                    <!-- Services -->
+                                    <section class="section services" id="services">
+                                      <div class="container text-center">
+                                        <h2>Our Services</h2>
+                                          <p>From your morning espresso to an afternoon pastry break, we've got you covered.</p>
+                                          <div class="services-grid">
+                                            <div class="service-card">
+                                              <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                                              </div>
+                                              <div class="service-content">
+                                                <h3>Coffee & Beverage Service</h3>
+                                                  <p>Expertly crafted espresso drinks, cold brew coffee, and a variety of hot and cold beverages to suit every taste.</p>
+                                                </div>
+                                              </div>
+                                              <div class="service-card">
+                                                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1555507036-ab794f27d2e9?ixlib=rb-4.0.3&auto=format&fit=crop&w-800&q=80');">
+                                                </div>
+                                                <div class="service-content">
+                                                  <h3>Baked Goods Retail</h3>
+                                                    <p>Freshly baked croissants and pastries made daily in-house, perfect for pairing with your favorite drink.</p>
+                                                  </div>
+                                                </div>
+                                                <div class="service-card">
+                                                  <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                                                  </div>
+                                                  <div class="service-content">
+                                                    <h3>Online Ordering for Pickup</h3>
+                                                      <p>Order ahead through our website or app and pick up your items without waiting in line.</p>
+                                                    </div>
+                                                  </div>
+                                                  <div class="service-card">
+                                                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                                                    </div>
+                                                    <div class="service-content">
+                                                      <h3>In-Store Dining</h3>
+                                                        <p>Relax in our cozy cafe atmosphere with comfortable seating, perfect for meetings, study sessions, or casual gatherings.</p>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </section>
+                                              
+                                              <!-- About -->
+                                              <section class="section" id="about">
+                                                <div class="container">
+                                                  <h2 class="text-center">Our Story</h2>
+                                                    <div class="about-content">
+                                                      <div class="about-text">
+                                                        <h3>The Neighborhood Cafe You've Been Looking For</h3>
+                                                          <p>Twisted Grounds was born from a simple idea: create a welcoming, artisanal neighborhood cafe where Spring Garden residents, professionals, students, and visitors could enjoy high-quality coffee and fresh baked goods in a friendly, community-oriented atmosphere.</p>
+                                                          <p>Located just steps from the Philadelphia Museum of Art, we've become a beloved local spot where people gather not just for exceptional espresso drinks and croissants, but for the sense of community we foster.</p>
+                                                          <p>Our commitment to quality extends from our carefully sourced coffee beans to our daily-baked pastries, all served with the warmth and approachability that defines the Spring Garden neighborhood.</p>
+                                                          <a href="#contact" class="btn">Visit Us Today</a>
+                                                          </div>
+                                                          <div class="about-img">
+                                                            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Twisted Grounds cafe interior with cozy seating">
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </section>
+                                                    
+                                                    <!-- Testimonials -->
+                                                    <section class="section testimonials" id="testimonials">
+                                                      <div class="container text-center">
+                                                        <h2>What Our Customers Say</h2>
+                                                          <p>Don't just take our word for it—hear from our Spring Garden community.</p>
+                                                          <div class="testimonial-slider">
+                                                            <div class="testimonial-track" id="testimonialTrack">
+                                                              <div class="testimonial-slide">
+                                                                <p class="testimonial-text">"Twisted Grounds has become my daily stop before work. Their cold brew is the best in Philadelphia, and the croissants are always fresh and flaky. The staff remembers my name and order—it feels like a real neighborhood spot."</p>
+                                                                  <div class="testimonial-author">
+                                                                    <div class="author-avatar">MJ</div>
+                                                                      <div>
+                                                                        <h4>Michael Johnson</h4>
+                                                                          <p>Spring Garden Resident</p>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                    <div class="testimonial-slide">
+                                                                      <p class="testimonial-text">"As a student at nearby schools, I spend a lot of time studying at Twisted Grounds. The atmosphere is perfect, the coffee keeps me going, and the online ordering makes it so easy to grab what I need between classes. It's my home away from home."</p>
+                                                                        <div class="testimonial-author">
+                                                                          <div class="author-avatar">SR</div>
+                                                                            <div>
+                                                                              <h4>Sarah Rodriguez</h4>
+                                                                                <p>Local Student</p>
+                                                                              </div>
+                                                                            </div>
+                                                                          </div>
+                                                                          <div class="testimonial-slide">
+                                                                            <p class="testimonial-text">"After visiting the Art Museum, we stumbled upon Twisted Grounds and what a delightful find! The espresso was perfectly balanced, and the pastries were clearly baked that morning. We'll definitely be back on our next Philadelphia visit."</p>
+                                                                              <div class="testimonial-author">
+                                                                                <div class="author-avatar">TK</div>
+                                                                                  <div>
+                                                                                    <h4>Thomas & Karen</h4>
+                                                                                      <p>Museum Visitors</p>
+                                                                                    </div>
+                                                                                  </div>
+                                                                                </div>
+                                                                              </div>
+                                                                              <div class="slider-dots" id="sliderDots">
+                                                                                <div class="dot active" data-slide="0">
+                                                                                </div>
+                                                                                <div class="dot" data-slide="1">
+                                                                                </div>
+                                                                                <div class="dot" data-slide="2">
+                                                                                </div>
+                                                                              </div>
+                                                                            </div>
+                                                                          </div>
+                                                                        </section>
+                                                                        
+                                                                        <!-- Gallery -->
+                                                                        <section class="section" id="gallery">
+                                                                          <div class="container text-center">
+                                                                            <h2>Our Cafe & Creations</h2>
+                                                                              <p>Take a peek inside our Spring Garden cafe and see what we're brewing up.</p>
+                                                                              <div class="gallery-grid">
+                                                                                <div class="gallery-item">
+                                                                                  <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Barista preparing coffee" class="gallery-img">
+                                                                                </div>
+                                                                                <div class="gallery-item">
+                                                                                  <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cafe interior with customers" class="gallery-img">
+                                                                                </div>
+                                                                                <div class="gallery-item">
+                                                                                  <img src="https://images.unsplash.com/photo-1555507036-ab794f27d2e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Freshly baked croissants" class="gallery-img">
+                                                                                </div>
+                                                                                <div class="gallery-item">
+                                                                                  <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Espresso being poured" class="gallery-img">
+                                                                                </div>
+                                                                              </div>
+                                                                            </div>
+                                                                          </section>
+                                                                          
+                                                                          <!-- FAQ -->
+                                                                          <section class="section" id="faq">
+                                                                            <div class="container text-center">
+                                                                              <h2>Frequently Asked Questions</h2>
+                                                                                <p>Get answers to common questions about Twisted Grounds.</p>
+                                                                                <div class="faq-container">
+                                                                                  <div class="faq-item">
+                                                                                    <div class="faq-question">
+                                                                                      <h3>What are your hours of operation?</h3>
+                                                                                        <i class="fas fa-plus faq-icon">
+                                                                                        </i>
+                                                                                      </div>
+                                                                                      <div class="faq-answer">
+                                                                                        <p>We're open Monday through Friday from 7:00 AM to 7:00 PM, Saturday from 8:00 AM to 7:00 PM, and Sunday from 8:00 AM to 5:00 PM.</p>
+                                                                                      </div>
+                                                                                    </div>
+                                                                                    <div class="faq-item">
+                                                                                      <div class="faq-question">
+                                                                                        <h3>Do you offer online ordering?</h3>
+                                                                                          <i class="fas fa-plus faq-icon">
+                                                                                          </i>
+                                                                                        </div>
+                                                                                        <div class="faq-answer">
+                                                                                          <p>Yes! You can order ahead through our website for quick pickup. Simply select your items, choose a pickup time, and your order will be ready when you arrive.</p>
+                                                                                        </div>
+                                                                                      </div>
+                                                                                      <div class="faq-item">
+                                                                                        <div class="faq-question">
+                                                                                          <h3>Where are you located?</h3>
+                                                                                            <i class="fas fa-plus faq-icon">
+                                                                                            </i>
+                                                                                          </div>
+                                                                                          <div class="faq-answer">
+                                                                                            <p>We're located at 547 North 20th Street in the Spring Garden neighborhood of Philadelphia, just steps from the Philadelphia Museum of Art.</p>
+                                                                                          </div>
+                                                                                        </div>
+                                                                                        <div class="faq-item">
+                                                                                          <div class="faq-question">
+                                                                                            <h3>Do you have seating available?</h3>
+                                                                                              <i class="fas fa-plus faq-icon">
+                                                                                              </i>
+                                                                                            </div>
+                                                                                            <div class="faq-answer">
+                                                                                              <p>Yes, we have comfortable indoor seating perfect for enjoying your coffee, working, studying, or meeting with friends.</p>
+                                                                                            </div>
+                                                                                          </div>
+                                                                                        </div>
+                                                                                      </div>
+                                                                                    </section>
+                                                                                    
+                                                                                    <!-- CTA -->
+                                                                                    <section class="section cta" id="cta">
+                                                                                      <div class="container text-center">
+                                                                                        <h2>Ready to Experience Twisted Grounds?</h2>
+                                                                                          <p>Visit us in Spring Garden or order ahead for quick pickup. Your perfect coffee and pastry await.</p>
+                                                                                          <div class="hero-btns" style="justify-content: center;">
+                                                                                            <a href="#order" class="btn">Order Online Now</a>
+                                                                                              <a href="#contact" class="btn btn-secondary">Visit Our Cafe</a>
+                                                                                              </div>
+                                                                                            </div>
+                                                                                          </section>
+                                                                                          
+                                                                                          <!-- Footer -->
+                                                                                          <footer id="contact">
+                                                                                            <div class="container">
+                                                                                              <div class="footer-content">
+                                                                                                <div class="footer-about">
+                                                                                                  <div class="footer-logo">Twisted <span>Grounds</span>
+                                                                                                  </div>
+                                                                                                  <p>Your friendly neighborhood cafe in Spring Garden, Philadelphia, offering handcrafted coffee and fresh baked goods with convenience and community at its heart.</p>
+                                                                                                  <div class="social-links">
+                                                                                                    <a href="#" class="social-link" aria-label="Facebook">
+                                                                                                      <i class="fab fa-facebook-f">
+                                                                                                      </i>
+                                                                                                    </a>
+                                                                                                    <a href="#" class="social-link" aria-label="Instagram">
+                                                                                                      <i class="fab fa-instagram">
+                                                                                                      </i>
+                                                                                                    </a>
+                                                                                                    <a href="#" class="social-link" aria-label="Twitter">
+                                                                                                      <i class="fab fa-twitter">
+                                                                                                      </i>
+                                                                                                    </a>
+                                                                                                  </div>
+                                                                                                </div>
+                                                                                                <div class="footer-links-container">
+                                                                                                  <h3 class="footer-heading">Quick Links</h3>
+                                                                                                    <ul class="footer-links">
+                                                                                                      <li>
+                                                                                                        <a href="#home">Home</a>
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                          <a href="#services">Services</a>
+                                                                                                          </li>
+                                                                                                          <li>
+                                                                                                            <a href="#about">About Us</a>
+                                                                                                            </li>
+                                                                                                            <li>
+                                                                                                              <a href="#menu">Menu</a>
+                                                                                                              </li>
+                                                                                                              <li>
+                                                                                                                <a href="#contact">Contact</a>
+                                                                                                                </li>
+                                                                                                              </ul>
+                                                                                                            </div>
+                                                                                                            <div class="footer-contact">
+                                                                                                              <h3 class="footer-heading">Contact Info</h3>
+                                                                                                                <ul class="contact-info">
+                                                                                                                  <li>
+                                                                                                                    <i class="fas fa-map-marker-alt contact-icon">
+                                                                                                                    </i>
+                                                                                                                    <span>547 North 20th Street<br>Philadelphia, PA 19130</span>
+                                                                                                                    </li>
+                                                                                                                    <li>
+                                                                                                                      <i class="fas fa-phone contact-icon">
+                                                                                                                      </i>
+                                                                                                                      <span>(215) 555-0123</span>
+                                                                                                                      </li>
+                                                                                                                      <li>
+                                                                                                                        <i class="fas fa-envelope contact-icon">
+                                                                                                                        </i>
+                                                                                                                        <span>hello@twistedgrounds.com</span>
+                                                                                                                        </li>
+                                                                                                                        <li>
+                                                                                                                          <i class="fas fa-clock contact-icon">
+                                                                                                                          </i>
+                                                                                                                          <span>Mon-Fri: 7am-7pm<br>Sat: 8am-7pm<br>Sun: 8am-5pm</span>
+                                                                                                                          </li>
+                                                                                                                        </ul>
+                                                                                                                      </div>
+                                                                                                                    </div>
+                                                                                                                    <div class="copyright">
+                                                                                                                      <p>&copy; 2023 Twisted Grounds. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--accent);">
+                                                                                                                    </i> for the Spring Garden community.</p>
+                                                                                                                  </div>
+                                                                                                                </div>
+                                                                                                              </footer>
+                                                                                                              
+                                                                                                              <script>
+                                                                                                                // Mobile Navigation Toggle
+                                                                                                                const mobileToggle = document.getElementById('mobileToggle');
+                                                                                                                const navMenu = document.getElementById('navMenu');
+                                                                                                                
+                                                                                                                mobileToggle.addEventListener('click', () => {
+                                                                                                                navMenu.classList.toggle('active');
+                                                                                                                mobileToggle.innerHTML = navMenu.classList.contains('active')
+                                                                                                                ? '<i class="fas fa-times">
+                                                                                                              </i>'
+                                                                                                              : '<i class="fas fa-bars">
+                                                                                                            </i>';
+                                                                                                            });
+                                                                                                            
+                                                                                                            // Close mobile menu when clicking a link
+                                                                                                            document.querySelectorAll('.nav-link').forEach(link => {
+                                                                                                            link.addEventListener('click', () => {
+                                                                                                            navMenu.classList.remove('active');
+                                                                                                            mobileToggle.innerHTML = '<i class="fas fa-bars">
+                                                                                                          </i>';
+                                                                                                          });
+                                                                                                          });
+                                                                                                          
+                                                                                                          // Header scroll effect
+                                                                                                          const header = document.getElementById('header');
+                                                                                                          
+                                                                                                          window.addEventListener('scroll', () => {
+                                                                                                          if (window.scrollY > 50) {
+                                                                                                          header.classList.add('header-scrolled');
+                                                                                                          } else {
+                                                                                                          header.classList.remove('header-scrolled');
+                                                                                                          }
+                                                                                                          });
+                                                                                                          
+                                                                                                          // Testimonial Slider
+                                                                                                          const testimonialTrack = document.getElementById('testimonialTrack');
+                                                                                                          const dots = document.querySelectorAll('.dot');
+                                                                                                          let currentSlide = 0;
+                                                                                                          
+                                                                                                          function updateSlider() {
+                                                                                                          testimonialTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+                                                                                                          
+                                                                                                          dots.forEach((dot, index) => {
+                                                                                                          if (index === currentSlide) {
+                                                                                                          dot.classList.add('active');
+                                                                                                          } else {
+                                                                                                          dot.classList.remove('active');
+                                                                                                          }
+                                                                                                          });
+                                                                                                          }
+                                                                                                          
+                                                                                                          dots.forEach(dot => {
+                                                                                                          dot.addEventListener('click', function() {
+                                                                                                          currentSlide = parseInt(this.getAttribute('data-slide'));
+                                                                                                          updateSlider();
+                                                                                                          });
+                                                                                                          });
+                                                                                                          
+                                                                                                          // Auto-advance testimonials
+                                                                                                          setInterval(() => {
+                                                                                                          currentSlide = (currentSlide + 1) % dots.length;
+                                                                                                          updateSlider();
+                                                                                                          }, 5000);
+                                                                                                          
+                                                                                                          // FAQ Accordion
+                                                                                                          const faqItems = document.querySelectorAll('.faq-item');
+                                                                                                          
+                                                                                                          faqItems.forEach(item => {
+                                                                                                          const question = item.querySelector('.faq-question');
+                                                                                                          
+                                                                                                          question.addEventListener('click', () => {
+                                                                                                          // Close all other items
+                                                                                                          faqItems.forEach(otherItem => {
+                                                                                                          if (otherItem !== item && otherItem.classList.contains('active')) {
+                                                                                                          otherItem.classList.remove('active');
+                                                                                                          }
+                                                                                                          });
+                                                                                                          
+                                                                                                          // Toggle current item
+                                                                                                          item.classList.toggle('active');
+                                                                                                          });
+                                                                                                          });
+                                                                                                          
+                                                                                                          // Smooth scrolling for anchor links
+                                                                                                          document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                                                                                                          anchor.addEventListener('click', function(e) {
+                                                                                                          e.preventDefault();
+                                                                                                          
+                                                                                                          const targetId = this.getAttribute('href');
+                                                                                                          if (targetId === '#') return;
+                                                                                                          
+                                                                                                          const targetElement = document.querySelector(targetId);
+                                                                                                          if (targetElement) {
+                                                                                                          window.scrollTo({
+                                                                                                          top: targetElement.offsetTop - 80,
+                                                                                                          behavior: 'smooth'
+                                                                                                          });
+                                                                                                          }
+                                                                                                          });
+                                                                                                          });
+                                                                                                          
+                                                                                                          // Initialize header state
+                                                                                                          if (window.scrollY > 50) {
+                                                                                                          header.classList.add('header-scrolled');
+                                                                                                          }
+                                                                                                        </script>
+                                                                                                      </body>
+                                                                                                    </html>
