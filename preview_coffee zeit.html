@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClearPath Solutions | Modern Professional Services</title>
+  <meta name="description" content="ClearPath Solutions delivers exceptional, tailored services with clarity, reliability, and forward-thinking expertise for your success.">
+  <meta name="keywords" content="professional services, business solutions, modern expertise, reliable partner">
+  <meta name="author" content="ClearPath Solutions">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* CSS Reset & Base */
+    :root {
+    --primary: #2563EB;
+    --primary-dark: #1D4ED8;
+    --secondary: #64748B;
+    --accent: #06B6D4;
+    --background: #FFFFFF;
+    --light-bg: #F8FAFC;
+    --dark-text: #0F172A;
+    --medium-text: #475569;
+    --light-text: #94A3B8;
+    --border: #E2E8F0;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --radius: 12px;
+    --radius-sm: 8px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --section-padding: 5rem 1.5rem;
+    }
+    
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    
+    html {
+    scroll-behavior: smooth;
+    }
+    
+    body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--medium-text);
+    background-color: var(--background);
+    overflow-x: hidden;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--dark-text);
+    margin-bottom: 1rem;
+    }
+    
+    h1 {
+    font-size: 2.75rem;
+    font-weight: 800;
+    }
+    
+    h2 {
+    font-size: 2.25rem;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2.5rem;
+    }
+    
+    h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    border-radius: 2px;
+    }
+    
+    h3 {
+    font-size: 1.5rem;
+    }
+    
+    p {
+    margin-bottom: 1.25rem;
+    }
+    
+    a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+    }
+    
+    ul {
+    list-style: none;
+    }
+    
+    img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    }
+    
+    .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    }
+    
+    .section {
+    padding: var(--section-padding);
+    }
+    
+    .bg-light {
+    background-color: var(--light-bg);
+    }
+    
+    .text-center {
+    text-align: center;
+    }
+    
+    .text-center h2:after {
+    left: 50%;
+    transform: translateX(-50%);
+    }
+    
+    .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 2rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    gap: 0.5rem;
+    }
+    
+    .btn-primary {
+    background-color: var(--primary);
+    color: white;
+    box-shadow: var(--shadow);
+    }
+    
+    .btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    }
+    
+    .btn-secondary {
+    background-color: white;
+    color: var(--primary);
+    border: 2px solid var(--border);
+    }
+    
+    .btn-secondary:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    }
+    
+    .section-header {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    }
+    
+    .section-header p {
+    font-size: 1.125rem;
+    color: var(--secondary);
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+    }
+    
+    @keyframes slideInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+    }
+    
+    .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    
+    .animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+    }
+    
+    /* Header & Navigation */
+    header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 1rem 0;
+    transition: var(--transition);
+    }
+    
+    .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+    
+    .logo {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    }
+    
+    .logo span {
+    color: var(--dark-text);
+    }
+    
+    .nav-links {
+    display: flex;
+    gap: 2rem;
+    }
+    
+    .nav-links a {
+    font-weight: 500;
+    position: relative;
+    }
+    
+    .nav-links a:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary);
+    transition: width 0.3s ease;
+    }
+    
+    .nav-links a:hover:after {
+    width: 100%;
+    }
+    
+    .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--dark-text);
+    cursor: pointer;
+    }
+    
+    /* Hero Section */
+    .hero {
+    padding-top: 8rem;
+    padding-bottom: 6rem;
+    background: linear-gradient(135deg, #F8FAFC 0%, #FFFFFF 100%);
+    position: relative;
+    overflow: hidden;
+    }
+    
+    .hero:before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 70%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+    z-index: 0;
+    }
+    
+    .hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    }
+    
+    .hero-content h1 {
+    margin-bottom: 1.5rem;
+    animation: fadeIn 1s ease-out;
+    }
+    
+    .hero-content p {
+    font-size: 1.125rem;
+    color: var(--secondary);
+    margin-bottom: 2rem;
+    animation: fadeIn 1s ease-out 0.2s both;
+    }
+    
+    .hero-btns {
+    display: flex;
+    gap: 1rem;
+    animation: fadeIn 1s ease-out 0.4s both;
+    }
+    
+    .hero-image {
+    position: relative;
+    animation: slideInRight 1s ease-out;
+    }
+    
+    .hero-image img {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    }
+    
+    /* Trust Bar */
+    .trust-bar {
+    padding: 2.5rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    }
+    
+    .trust-bar-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    }
+    
+    .trust-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    }
+    
+    .trust-icon {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    }
+    
+    .trust-text {
+    font-weight: 600;
+    color: var(--dark-text);
+    }
+    
+    /* Benefits */
+    .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    }
+    
+    .benefit-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid transparent;
+    }
+    
+    .benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+    }
+    
+    .benefit-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    }
+    
+    .benefit-card h3 {
+    margin-bottom: 0.75rem;
+    }
+    
+    /* Services */
+    .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    }
+    
+    .service-card {
+    background: white;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    }
+    
+    .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    }
+    
+    .service-img {
+    height: 200px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+    }
+    
+    .service-content {
+    padding: 2rem;
+    }
+    
+    .service-content h3 {
+    margin-bottom: 0.75rem;
+    }
+    
+    /* About */
+    .about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    }
+    
+    .about-image img {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    }
+    
+    .about-content h2 {
+    margin-bottom: 1.5rem;
+    }
+    
+    .about-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    }
+    
+    .stat {
+    text-align: center;
+    }
+    
+    .stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+    }
+    
+    .stat-label {
+    font-size: 0.875rem;
+    color: var(--secondary);
+    font-weight: 500;
+    }
+    
+    /* Testimonials */
+    .testimonials-slider {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    }
+    
+    .testimonial-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    }
+    
+    .testimonial-slide {
+    min-width: 100%;
+    padding: 2rem;
+    }
+    
+    .testimonial-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    box-shadow: var(--shadow);
+    position: relative;
+    }
+    
+    .testimonial-card:before {
+    content: '"';
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+    font-size: 4rem;
+    color: var(--primary);
+    opacity: 0.2;
+    font-family: Georgia, serif;
+    line-height: 1;
+    }
+    
+    .testimonial-text {
+    font-size: 1.125rem;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+    }
+    
+    .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    }
+    
+    .author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--light-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-weight: 700;
+    }
+    
+    .author-info h4 {
+    margin-bottom: 0.25rem;
+    }
+    
+    .author-info p {
+    margin-bottom: 0;
+    color: var(--secondary);
+    font-size: 0.875rem;
+    }
+    
+    .slider-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    }
+    
+    .slider-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    }
+    
+    .slider-btn:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    }
+    
+    /* Gallery */
+    .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    }
+    
+    .gallery-item {
+    border-radius: var(--radius);
+    overflow: hidden;
+    height: 250px;
+    background: var(--light-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 2rem;
+    transition: var(--transition);
+    position: relative;
+    }
+    
+    .gallery-item:hover {
+    transform: scale(1.05);
+    }
+    
+    .gallery-item:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    }
+    
+    .gallery-item:hover:after {
+    opacity: 1;
+    }
+    
+    /* FAQ */
+    .faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    }
+    
+    .faq-item {
+    margin-bottom: 1rem;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    }
+    
+    .faq-question {
+    padding: 1.5rem;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+    }
+    
+    .faq-question:hover {
+    background: var(--light-bg);
+    }
+    
+    .faq-question.active {
+    background: var(--light-bg);
+    color: var(--primary);
+    }
+    
+    .faq-icon {
+    transition: transform 0.3s ease;
+    }
+    
+    .faq-question.active .faq-icon {
+    transform: rotate(45deg);
+    }
+    
+    .faq-answer {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    background: white;
+    }
+    
+    .faq-answer.open {
+    padding: 1.5rem;
+    max-height: 500px;
+    }
+    
+    /* CTA */
+    .cta {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    text-align: center;
+    border-radius: var(--radius);
+    padding: 4rem 2rem;
+    margin: 0 auto;
+    max-width: 900px;
+    }
+    
+    .cta h2 {
+    color: white;
+    margin-bottom: 1rem;
+    }
+    
+    .cta h2:after {
+    background: white;
+    left: 50%;
+    transform: translateX(-50%);
+    }
+    
+    .cta p {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    
+    .cta .btn {
+    background: white;
+    color: var(--primary);
+    font-weight: 700;
+    }
+    
+    .cta .btn:hover {
+    background: var(--light-bg);
+    transform: translateY(-2px);
+    }
+    
+    /* Footer */
+    footer {
+    background: var(--dark-text);
+    color: var(--light-text);
+    padding: 4rem 0 2rem;
+    }
+    
+    .footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+    }
+    
+    .footer-col h3 {
+    color: white;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    }
+    
+    .footer-links li {
+    margin-bottom: 0.75rem;
+    }
+    
+    .footer-links a:hover {
+    color: white;
+    }
+    
+    .social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    }
+    
+    .social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    }
+    
+    .social-link:hover {
+    background: var(--primary);
+    transform: translateY(-3px);
+    }
+    
+    .copyright {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.875rem;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 992px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    .hero-container, .about-container { grid-template-columns: 1fr; gap: 3rem; }
+    .hero { padding-top: 7rem; }
+    .about-image { order: -1; }
+    }
+    
+    @media (max-width: 768px) {
+    .section { padding: 4rem 1.5rem; }
+    h1 { font-size: 2.25rem; }
+    h2 { font-size: 1.75rem; }
+    .nav-links {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    padding: 2rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    z-index: 999;
+    }
+    .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    }
+    .mobile-menu-btn { display: block; }
+    .hero-btns { flex-direction: column; }
+    .trust-bar-container { justify-content: center; }
+    .about-stats { flex-direction: column; gap: 1.5rem; }
+    .footer-container { grid-template-columns: 1fr; text-align: center; }
+    .social-links { justify-content: center; }
+    }
+    
+    @media (max-width: 480px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+    .section { padding: 3rem 1rem; }
+    .benefit-card, .service-content { padding: 1.5rem; }
+    .testimonial-card { padding: 2rem 1.5rem; }
+    .cta { padding: 3rem 1.5rem; }
+    }
+    
+    /* Accessibility */
+    .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+    }
+    
+    a:focus, button:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    }
+    
+    /* Skip to main content link */
+    .skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary);
+    color: white;
+    padding: 8px 16px;
+    z-index: 1001;
+    border-radius: 0 0 var(--radius-sm) 0;
+    transition: top 0.3s ease;
+    }
+    
+    .skip-to-content:focus {
+    top: 0;
+    }
+  </style>
+</head>
+<body>
+<!-- Skip to Content -->
+<a href="#main-content" class="skip-to-content">Skip to main content</a>
+  
+  <!-- Header -->
+  <header>
+  <div class="container header-container">
+    <a href="#" class="logo">
+      <i class="fas fa-compass">
+      </i>
+      ClearPath<span>Solutions</span>
+    </a>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+      <i class="fas fa-bars">
+      </i>
+    </button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+        <a href="#services">Services</a>
+          <a href="#about">About</a>
+            <a href="#testimonials">Testimonials</a>
+              <a href="#contact">Contact</a>
+              </nav>
+            </div>
+          </header>
+          
+          <main id="main-content">
+            <!-- Hero Section -->
+            <section class="hero" id="home">
+              <div class="container hero-container">
+                <div class="hero-content">
+                  <h1>Clarity in Every Solution, Precision in Every Step</h1>
+                    <p>ClearPath Solutions transforms complexity into opportunity. We are your trusted partner for forward-thinking strategies and reliable execution that drives measurable success.</p>
+                    <div class="hero-btns">
+                      <a href="#services" class="btn btn-primary">Explore Services</a>
+                        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                        </div>
+                      </div>
+                      <div class="hero-image">
+                        <div style="background: linear-gradient(135deg, #2563EB 0%, #06B6D4 100%); height: 400px; border-radius: var(--radius); display: flex; align-items: center; justify-content: center; color: white;">
+                          <i class="fas fa-chart-line" style="font-size: 8rem; opacity: 0.8;">
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  
+                  <!-- Trust Bar -->
+                  <section class="trust-bar">
+                    <div class="container trust-bar-container">
+                      <div class="trust-item">
+                        <div class="trust-icon">
+                          <i class="fas fa-award">
+                          </i>
+                        </div>
+                        <div class="trust-text">Award-Winning Quality</div>
+                        </div>
+                        <div class="trust-item">
+                          <div class="trust-icon">
+                            <i class="fas fa-users">
+                            </i>
+                          </div>
+                          <div class="trust-text">Client-First Approach</div>
+                          </div>
+                          <div class="trust-item">
+                            <div class="trust-icon">
+                              <i class="fas fa-lightbulb">
+                              </i>
+                            </div>
+                            <div class="trust-text">Innovative Strategies</div>
+                            </div>
+                            <div class="trust-item">
+                              <div class="trust-icon">
+                                <i class="fas fa-shield-alt">
+                                </i>
+                              </div>
+                              <div class="trust-text">Trusted & Reliable</div>
+                              </div>
+                            </div>
+                          </section>
+                          
+                          <!-- Benefits -->
+                          <section class="section bg-light">
+                            <div class="container">
+                              <div class="section-header animate-on-scroll">
+                                <h2>Why Choose ClearPath?</h2>
+                                  <p>We combine deep expertise with a commitment to clarity, delivering tangible benefits that propel your business forward.</p>
+                                </div>
+                                <div class="benefits-grid">
+                                  <div class="benefit-card animate-on-scroll">
+                                    <div class="benefit-icon">
+                                      <i class="fas fa-bullseye">
+                                      </i>
+                                    </div>
+                                    <h3>Focused Precision</h3>
+                                      <p>Every project receives targeted attention and strategic precision, ensuring outcomes that align perfectly with your objectives.</p>
+                                    </div>
+                                    <div class="benefit-card animate-on-scroll">
+                                      <div class="benefit-icon">
+                                        <i class="fas fa-rocket">
+                                        </i>
+                                      </div>
+                                      <h3>Accelerated Results</h3>
+                                        <p>Leverage our efficient processes and proven methodologies to achieve your goals faster without compromising quality.</p>
+                                      </div>
+                                      <div class="benefit-card animate-on-scroll">
+                                        <div class="benefit-icon">
+                                          <i class="fas fa-handshake">
+                                          </i>
+                                        </div>
+                                        <h3>Partnership Mindset</h3>
+                                          <p>We work alongside you as a true partner, invested in your success and dedicated to building a lasting relationship.</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </section>
+                                  
+                                  <!-- Services -->
+                                  <section class="section" id="services">
+                                    <div class="container">
+                                      <div class="section-header animate-on-scroll">
+                                        <h2>Our Core Services</h2>
+                                          <p>Tailored solutions designed to address your unique challenges and unlock new opportunities for growth and efficiency.</p>
+                                        </div>
+                                        <div class="services-grid">
+                                          <div class="service-card animate-on-scroll">
+                                            <div class="service-img">
+                                              <i class="fas fa-chart-pie">
+                                              </i>
+                                            </div>
+                                            <div class="service-content">
+                                              <h3>Strategic Advisory</h3>
+                                                <p>Gain clarity and direction with data-informed strategies that map a clear path to your business objectives.</p>
+                                              </div>
+                                            </div>
+                                            <div class="service-card animate-on-scroll">
+                                              <div class="service-img">
+                                                <i class="fas fa-cogs">
+                                                </i>
+                                              </div>
+                                              <div class="service-content">
+                                                <h3>Process Optimization</h3>
+                                                  <p>Streamline operations, eliminate inefficiencies, and build scalable systems that enhance productivity and reduce costs.</p>
+                                                </div>
+                                              </div>
+                                              <div class="service-card animate-on-scroll">
+                                                <div class="service-img">
+                                                  <i class="fas fa-user-tie">
+                                                  </i>
+                                                </div>
+                                                <div class="service-content">
+                                                  <h3>Professional Development</h3>
+                                                    <p>Empower your team with training and frameworks that foster innovation, collaboration, and sustained excellence.</p>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </section>
+                                          
+                                          <!-- About -->
+                                          <section class="section bg-light" id="about">
+                                            <div class="container about-container">
+                                              <div class="about-image animate-on-scroll">
+                                                <div style="background: var(--light-bg); height: 400px; border-radius: var(--radius); display: flex; align-items: center; justify-content: center; color: var(--primary);">
+                                                  <i class="fas fa-users" style="font-size: 8rem; opacity: 0.7;">
+                                                  </i>
+                                                </div>
+                                              </div>
+                                              <div class="about-content animate-on-scroll">
+                                                <h2>Our Story & Approach</h2>
+                                                  <p>ClearPath Solutions was founded on a simple principle: complexity is the enemy of progress. In a world of overwhelming information and rapid change, we provide the clarity and reliable guidance needed to move forward with confidence.</p>
+                                                  <p>Our team of seasoned professionals brings diverse expertise and a shared commitment to delivering exceptional value. We listen intently, analyze deeply, and execute precisely, ensuring every solution is custom-built for your context and ambitions.</p>
+                                                  <div class="about-stats">
+                                                    <div class="stat">
+                                                      <div class="stat-number">100%</div>
+                                                        <div class="stat-label">Client Focus</div>
+                                                        </div>
+                                                        <div class="stat">
+                                                          <div class="stat-number">24/7</div>
+                                                            <div class="stat-label">Support</div>
+                                                            </div>
+                                                            <div class="stat">
+                                                              <div class="stat-number">∞</div>
+                                                                <div class="stat-label">Dedication</div>
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </section>
+                                                        
+                                                        <!-- Testimonials -->
+                                                        <section class="section" id="testimonials">
+                                                          <div class="container">
+                                                            <div class="section-header animate-on-scroll">
+                                                              <h2>Client Success Stories</h2>
+                                                                <p>Hear from organizations that have transformed their trajectory with ClearPath Solutions as their guide.</p>
+                                                              </div>
+                                                              <div class="testimonials-slider animate-on-scroll">
+                                                                <div class="testimonial-track" id="testimonialTrack">
+                                                                  <div class="testimonial-slide">
+                                                                    <div class="testimonial-card">
+                                                                      <p class="testimonial-text">Working with ClearPath brought unprecedented clarity to our strategic planning. Their team translated complex market data into an actionable roadmap that has accelerated our growth by 40% in the last fiscal year.</p>
+                                                                        <div class="testimonial-author">
+                                                                          <div class="author-avatar">JS</div>
+                                                                            <div class="author-info">
+                                                                              <h4>Jordan Smith</h4>
+                                                                                <p>CEO, InnovateCorp</p>
+                                                                              </div>
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>
+                                                                        <div class="testimonial-slide">
+                                                                          <div class="testimonial-card">
+                                                                            <p class="testimonial-text">The process optimization framework they implemented saved us over 200 hours per month in administrative work. Their partnership mindset means they're truly invested in our success, not just a project deliverable.</p>
+                                                                              <div class="testimonial-author">
+                                                                                <div class="author-avatar">MC</div>
+                                                                                  <div class="author-info">
+                                                                                    <h4>Maria Chen</h4>
+                                                                                      <p>Operations Director, ScaleTech</p>
+                                                                                    </div>
+                                                                                  </div>
+                                                                                </div>
+                                                                              </div>
+                                                                              <div class="testimonial-slide">
+                                                                                <div class="testimonial-card">
+                                                                                  <p class="testimonial-text">ClearPath's professional development program reshaped our company culture. Our teams are more collaborative, innovative, and aligned than ever before. They are the strategic partner we didn't know we needed.</p>
+                                                                                    <div class="testimonial-author">
+                                                                                      <div class="author-avatar">AR</div>
+                                                                                        <div class="author-info">
+                                                                                          <h4>Alex Rivera</h4>
+                                                                                            <p>VP of People, FutureLabs</p>
+                                                                                          </div>
+                                                                                        </div>
+                                                                                      </div>
+                                                                                    </div>
+                                                                                  </div>
+                                                                                  <div class="slider-controls">
+                                                                                    <button class="slider-btn" id="prevTestimonial" aria-label="Previous testimonial">
+                                                                                      <i class="fas fa-chevron-left">
+                                                                                      </i>
+                                                                                    </button>
+                                                                                    <button class="slider-btn" id="nextTestimonial" aria-label="Next testimonial">
+                                                                                      <i class="fas fa-chevron-right">
+                                                                                      </i>
+                                                                                    </button>
+                                                                                  </div>
+                                                                                </div>
+                                                                              </div>
+                                                                            </section>
+                                                                            
+                                                                            <!-- Gallery -->
+                                                                            <section class="section bg-light">
+                                                                              <div class="container">
+                                                                                <div class="section-header animate-on-scroll">
+                                                                                  <h2>Our Work in Action</h2>
+                                                                                    <p>Visualizing the impact of clarity, strategy, and partnership.</p>
+                                                                                  </div>
+                                                                                  <div class="gallery-grid">
+                                                                                    <div class="gallery-item animate-on-scroll">
+                                                                                      <i class="fas fa-brain">
+                                                                                      </i>
+                                                                                    </div>
+                                                                                    <div class="gallery-item animate-on-scroll">
+                                                                                      <i class="fas fa-network-wired">
+                                                                                      </i>
+                                                                                    </div>
+                                                                                    <div class="gallery-item animate-on-scroll">
+                                                                                      <i class="fas fa-project-diagram">
+                                                                                      </i>
+                                                                                    </div>
+                                                                                    <div class="gallery-item animate-on-scroll">
+                                                                                      <i class="fas fa-tasks">
+                                                                                      </i>
+                                                                                    </div>
+                                                                                  </div>
+                                                                                </div>
+                                                                              </section>
+                                                                              
+                                                                              <!-- FAQ -->
+                                                                              <section class="section" id="faq">
+                                                                                <div class="container">
+                                                                                  <div class="section-header animate-on-scroll">
+                                                                                    <h2>Frequently Asked Questions</h2>
+                                                                                      <p>Find quick answers to common questions about working with ClearPath Solutions.</p>
+                                                                                    </div>
+                                                                                    <div class="faq-container animate-on-scroll">
+                                                                                      <div class="faq-item">
+                                                                                        <div class="faq-question">
+                                                                                          <span>How do you tailor your services to different clients?</span>
+                                                                                            <span class="faq-icon">
+                                                                                              <i class="fas fa-plus">
+                                                                                              </i>
+                                                                                            </span>
+                                                                                          </div>
+                                                                                          <div class="faq-answer">
+                                                                                            <p>Every engagement begins with a deep discovery phase. We invest time to understand your unique context, challenges, goals, and culture. Our solutions are never off-the-shelf; they are custom-built from proven frameworks to fit your specific needs.</p>
+                                                                                          </div>
+                                                                                        </div>
+                                                                                        <div class="faq-item">
+                                                                                          <div class="faq-question">
+                                                                                            <span>What is your typical project timeline?</span>
+                                                                                              <span class="faq-icon">
+                                                                                                <i class="fas fa-plus">
+                                                                                                </i>
+                                                                                              </span>
+                                                                                            </div>
+                                                                                            <div class="faq-answer">
+                                                                                              <p>Timelines vary based on scope and complexity. A strategic advisory project might take 4-8 weeks, while a comprehensive process optimization initiative could span 3-6 months. We provide a clear timeline and milestone map during our initial proposal.</p>
+                                                                                            </div>
+                                                                                          </div>
+                                                                                          <div class="faq-item">
+                                                                                            <div class="faq-question">
+                                                                                              <span>How do you measure success and ROI?</span>
+                                                                                                <span class="faq-icon">
+                                                                                                  <i class="fas fa-plus">
+                                                                                                  </i>
+                                                                                                </span>
+                                                                                              </div>
+                                                                                              <div class="faq-answer">
+                                                                                                <p>We define success metrics collaboratively at the project's outset. These can include quantitative metrics (cost savings, revenue growth, time efficiency) and qualitative ones (team satisfaction, strategic clarity). We provide regular reporting against these benchmarks.</p>
+                                                                                              </div>
+                                                                                            </div>
+                                                                                            <div class="faq-item">
+                                                                                              <div class="faq-question">
+                                                                                                <span>What happens after a project is completed?</span>
+                                                                                                  <span class="faq-icon">
+                                                                                                    <i class="fas fa-plus">
+                                                                                                    </i>
+                                                                                                  </span>
+                                                                                                </div>
+                                                                                                <div class="faq-answer">
+                                                                                                  <p>Our partnership doesn't end at delivery. We offer ongoing support, review sessions, and optimization check-ins to ensure the solutions continue to deliver value and adapt as your business evolves.</p>
+                                                                                                </div>
+                                                                                              </div>
+                                                                                            </div>
+                                                                                          </div>
+                                                                                        </section>
+                                                                                        
+                                                                                        <!-- CTA -->
+                                                                                        <section class="section" id="contact">
+                                                                                          <div class="container">
+                                                                                            <div class="cta animate-on-scroll">
+                                                                                              <h2>Ready to Find Your Clear Path?</h2>
+                                                                                                <p>Stop navigating complexity alone. Let's have a conversation about your goals and explore how we can chart a course to your success together.</p>
+                                                                                                <a href="#contact-form" class="btn">Start Your Journey Today</a>
+                                                                                                </div>
+                                                                                              </div>
+                                                                                            </section>
+                                                                                          </main>
+                                                                                          
+                                                                                          <!-- Footer -->
+                                                                                          <footer>
+                                                                                            <div class="container">
+                                                                                              <div class="footer-container">
+                                                                                                <div class="footer-col">
+                                                                                                  <a href="#" class="logo" style="color: white; margin-bottom: 1.5rem; display: inline-block;">
+                                                                                                    <i class="fas fa-compass">
+                                                                                                    </i>
+                                                                                                    ClearPath<span style="color: #E2E8F0;">Solutions</span>
+                                                                                                  </a>
+                                                                                                  <p>Providing clarity, strategy, and partnership for forward-thinking organizations.</p>
+                                                                                                  <div class="social-links">
+                                                                                                    <a href="#" class="social-link" aria-label="LinkedIn">
+                                                                                                      <i class="fab fa-linkedin-in">
+                                                                                                      </i>
+                                                                                                    </a>
+                                                                                                    <a href="#" class="social-link" aria-label="Twitter">
+                                                                                                      <i class="fab fa-twitter">
+                                                                                                      </i>
+                                                                                                    </a>
+                                                                                                    <a href="#" class="social-link" aria-label="Instagram">
+                                                                                                      <i class="fab fa-instagram">
+                                                                                                      </i>
+                                                                                                    </a>
+                                                                                                    <a href="#" class="social-link" aria-label="Facebook">
+                                                                                                      <i class="fab fa-facebook-f">
+                                                                                                      </i>
+                                                                                                    </a>
+                                                                                                  </div>
+                                                                                                </div>
+                                                                                                <div class="footer-col">
+                                                                                                  <h3>Quick Links</h3>
+                                                                                                    <ul class="footer-links">
+                                                                                                      <li>
+                                                                                                        <a href="#home">Home</a>
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                          <a href="#services">Services</a>
+                                                                                                          </li>
+                                                                                                          <li>
+                                                                                                            <a href="#about">About Us</a>
+                                                                                                            </li>
+                                                                                                            <li>
+                                                                                                              <a href="#testimonials">Case Studies</a>
+                                                                                                              </li>
+                                                                                                              <li>
+                                                                                                                <a href="#contact">Contact</a>
+                                                                                                                </li>
+                                                                                                              </ul>
+                                                                                                            </div>
+                                                                                                            <div class="footer-col">
+                                                                                                              <h3>Services</h3>
+                                                                                                                <ul class="footer-links">
+                                                                                                                  <li>
+                                                                                                                    <a href="#services">Strategic Advisory</a>
+                                                                                                                    </li>
+                                                                                                                    <li>
+                                                                                                                      <a href="#services">Process Optimization</a>
+                                                                                                                      </li>
+                                                                                                                      <li>
+                                                                                                                        <a href="#services">Professional Development</a>
+                                                                                                                        </li>
+                                                                                                                      </ul>
+                                                                                                                    </div>
+                                                                                                                    <div class="footer-col">
+                                                                                                                      <h3>Contact Info</h3>
+                                                                                                                        <ul class="footer-links">
+                                                                                                                          <li>
+                                                                                                                            <i class="fas fa-envelope" style="margin-right: 0.5rem;">
+                                                                                                                            </i> hello@clearpathsolutions.com</li>
+                                                                                                                            <li>
+                                                                                                                              <i class="fas fa-phone" style="margin-right: 0.5rem;">
+                                                                                                                              </i> +1 (555) 123-4567</li>
+                                                                                                                              <li>
+                                                                                                                                <i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;">
+                                                                                                                                </i> 123 Innovation Drive, Suite 500</li>
+                                                                                                                              </ul>
+                                                                                                                            </div>
+                                                                                                                          </div>
+                                                                                                                          <div class="copyright">
+                                                                                                                            <p>&copy; <span id="currentYear">
+                                                                                                                          </span> ClearPath Solutions. All rights reserved. | <a href="#" style="color: var(--accent);">Privacy Policy</a> | <a href="#" style="color: var(--accent);">Terms of Service</a>
+                                                                                                                        </p>
+                                                                                                                      </div>
+                                                                                                                    </div>
+                                                                                                                  </footer>
+                                                                                                                  
+                                                                                                                  <script>
+                                                                                                                    // DOM Ready
+                                                                                                                    document.addEventListener('DOMContentLoaded', function() {
+                                                                                                                    // Set current year in footer
+                                                                                                                    document.getElementById('currentYear').textContent = new Date().getFullYear();
+                                                                                                                    
+                                                                                                                    // Mobile Menu Toggle
+                                                                                                                    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+                                                                                                                    const navLinks = document.getElementById('navLinks');
+                                                                                                                    
+                                                                                                                    mobileMenuBtn.addEventListener('click', function() {
+                                                                                                                    navLinks.classList.toggle('active');
+                                                                                                                    const icon = this.querySelector('i');
+                                                                                                                    icon.classList.toggle('fa-bars');
+                                                                                                                    icon.classList.toggle('fa-times');
+                                                                                                                    });
+                                                                                                                    
+                                                                                                                    // Close mobile menu when clicking a link
+                                                                                                                    document.querySelectorAll('.nav-links a').forEach(link => {
+                                                                                                                    link.addEventListener('click', () => {
+                                                                                                                    navLinks.classList.remove('active');
+                                                                                                                    mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+                                                                                                                    });
+                                                                                                                    });
+                                                                                                                    
+                                                                                                                    // Testimonial Slider
+                                                                                                                    const track = document.getElementById('testimonialTrack');
+                                                                                                                    const slides = document.querySelectorAll('.testimonial-slide');
+                                                                                                                    const prevBtn = document.getElementById('prevTestimonial');
+                                                                                                                    const nextBtn = document.getElementById('nextTestimonial');
+                                                                                                                    let currentIndex = 0;
+                                                                                                                    
+                                                                                                                    function updateSlider() {
+                                                                                                                    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    nextBtn.addEventListener('click', () => {
+                                                                                                                    currentIndex = (currentIndex + 1) % slides.length;
+                                                                                                                    updateSlider();
+                                                                                                                    });
+                                                                                                                    
+                                                                                                                    prevBtn.addEventListener('click', () => {
+                                                                                                                    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                                                                                                                    updateSlider();
+                                                                                                                    });
+                                                                                                                    
+                                                                                                                    // Auto-advance testimonials
+                                                                                                                    setInterval(() => {
+                                                                                                                    currentIndex = (currentIndex + 1) % slides.length;
+                                                                                                                    updateSlider();
+                                                                                                                    }, 8000);
+                                                                                                                    
+                                                                                                                    // FAQ Accordion
+                                                                                                                    const faqQuestions = document.querySelectorAll('.faq-question');
+                                                                                                                    faqQuestions.forEach(question => {
+                                                                                                                    question.addEventListener('click', () => {
+                                                                                                                    const item = question.parentElement;
+                                                                                                                    const answer = item.querySelector('.faq-answer');
+                                                                                                                    const isOpen = answer.classList.contains('open');
+                                                                                                                    
+                                                                                                                    // Close all other items
+                                                                                                                    document.querySelectorAll('.faq-answer.open').forEach(openAnswer => {
+                                                                                                                    if (openAnswer !== answer) {
+                                                                                                                    openAnswer.classList.remove('open');
+                                                                                                                    openAnswer.previousElementSibling.classList.remove('active');
+                                                                                                                    }
+                                                                                                                    });
+                                                                                                                    
+                                                                                                                    // Toggle current item
+                                                                                                                    question.classList.toggle('active');
+                                                                                                                    answer.classList.toggle('open');
+                                                                                                                    });
+                                                                                                                    });
+                                                                                                                    
+                                                                                                                    // Scroll Animation Trigger
+                                                                                                                    const animateElements = document.querySelectorAll('.animate-on-scroll');
+                                                                                                                    const observer = new IntersectionObserver((entries) => {
+                                                                                                                    entries.forEach(entry => {
+                                                                                                                    if (entry.isIntersecting) {
+                                                                                                                    entry.target.classList.add('animated');
+                                                                                                                    }
+                                                                                                                    });
+                                                                                                                    }, {
+                                                                                                                    threshold: 0.1,
+                                                                                                                    rootMargin: '0px 0px -50px 0px'
+                                                                                                                    });
+                                                                                                                    
+                                                                                                                    animateElements.forEach(el => observer.observe(el));
+                                                                                                                    
+                                                                                                                    // Smooth scroll for anchor links
+                                                                                                                    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                                                                                                                    anchor.addEventListener('click', function(e) {
+                                                                                                                    const href = this.getAttribute('href');
+                                                                                                                    if (href === '#') return;
+                                                                                                                    
+                                                                                                                    e.preventDefault();
+                                                                                                                    const targetElement = document.querySelector(href);
+                                                                                                                    if (targetElement) {
+                                                                                                                    window.scrollTo({
+                                                                                                                    top: targetElement.offsetTop - 80,
+                                                                                                                    behavior: 'smooth'
+                                                                                                                    });
+                                                                                                                    }
+                                                                                                                    });
+                                                                                                                    });
+                                                                                                                    
+                                                                                                                    // Header scroll effect
+                                                                                                                    window.addEventListener('scroll', function() {
+                                                                                                                    const header = document.querySelector('header');
+                                                                                                                    if (window.scrollY > 100) {
+                                                                                                                    header.style.padding = '0.5rem 0';
+                                                                                                                    header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.08)';
+                                                                                                                    } else {
+                                                                                                                    header.style.padding = '1rem 0';
+                                                                                                                    header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
+                                                                                                                    }
+                                                                                                                    });
+                                                                                                                    });
+                                                                                                                  </script>
+                                                                                                                </body>
+                                                                                                              </html>
