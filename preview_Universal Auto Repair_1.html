@@ -1,0 +1,719 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Premium digital solutions provider delivering exceptional web experiences">
+<title>Premium Digital Solutions | Expert Web Development</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+    --primary: #2563eb;
+    --secondary: #1e293b;
+    --accent: #f59e0b;
+    --background: #ffffff;
+    --text: #1f2937;
+    --light-text: #6b7280;
+    --border: #e5e7eb;
+    --success: #10b981;
+    }
+    
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    
+    body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--background);
+    overflow-x: hidden;
+    }
+    
+    .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    }
+    
+    /* Header */
+    header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+    }
+    
+    .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+    
+    .logo {
+    height: 40px;
+    }
+    
+    nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    }
+    
+    nav a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    }
+    
+    nav a:hover {
+    color: var(--primary);
+    }
+    
+    .cta-button {
+    background: var(--primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    }
+    
+    .cta-button:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    }
+    
+    /* Hero Section */
+    .hero {
+    padding: 160px 0 80px;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    text-align: center;
+    }
+    
+    .hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    }
+    
+    .hero p {
+    font-size: 1.25rem;
+    color: var(--light-text);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    }
+    
+    /* Trust Bar */
+    .trust-bar {
+    padding: 3rem 0;
+    background: var(--background);
+    border-bottom: 1px solid var(--border);
+    }
+    
+    .trust-bar h3 {
+    text-align: center;
+    color: var(--light-text);
+    font-weight: 500;
+    margin-bottom: 2rem;
+    }
+    
+    .trust-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    opacity: 0.7;
+    }
+    
+    /* Benefits */
+    .benefits {
+    padding: 80px 0;
+    background: #f8fafc;
+    }
+    
+    .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    }
+    
+    .benefit-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    }
+    
+    .benefit-card:hover {
+    transform: translateY(-5px);
+    }
+    
+    .benefit-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+    }
+    
+    /* Services */
+    .services {
+    padding: 80px 0;
+    }
+    
+    .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    }
+    
+    .service-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+    }
+    
+    .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* About */
+    .about {
+    padding: 80px 0;
+    background: #f8fafc;
+    }
+    
+    .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    }
+    
+    .about-image {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    }
+    
+    /* Testimonials */
+    .testimonials {
+    padding: 80px 0;
+    }
+    
+    .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    }
+    
+    .testimonial-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border);
+    }
+    
+    .testimonial-text {
+    font-style: italic;
+    color: var(--light-text);
+    margin-bottom: 1rem;
+    }
+    
+    .testimonial-author {
+    font-weight: 600;
+    color: var(--text);
+    }
+    
+    /* Gallery */
+    .gallery {
+    padding: 80px 0;
+    background: #f8fafc;
+    }
+    
+    .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 3rem;
+    }
+    
+    .gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    }
+    
+    .gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover img {
+    transform: scale(1.05);
+    }
+    
+    /* FAQ */
+    .faq {
+    padding: 80px 0;
+    }
+    
+    .faq-item {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+    }
+    
+    .faq-question {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+    
+    .faq-answer {
+    color: var(--light-text);
+    padding-top: 0.5rem;
+    }
+    
+    /* CTA */
+    .cta {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--primary), #1d4ed8);
+    color: white;
+    text-align: center;
+    }
+    
+    .cta h2 {
+    margin-bottom: 1rem;
+    }
+    
+    .cta p {
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    }
+    
+    /* Footer */
+    footer {
+    background: var(--secondary);
+    color: white;
+    padding: 60px 0 20px;
+    }
+    
+    .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+    }
+    
+    .footer-column h4 {
+    margin-bottom: 1rem;
+    color: white;
+    }
+    
+    .footer-column ul {
+    list-style: none;
+    }
+    
+    .footer-column ul li {
+    margin-bottom: 0.5rem;
+    }
+    
+    .footer-column a {
+    color: #d1d5db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    }
+    
+    .footer-column a:hover {
+    color: white;
+    }
+    
+    .copyright {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #374151;
+    color: #9ca3af;
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+    from {
+    opacity: 0;
+    transform: translateY(30px);
+    }
+    to {
+    opacity: 1;
+    transform: translateY(0);
+    }
+    }
+    
+    .animate {
+    animation: fadeInUp 0.6s ease forwards;
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+    .hero h1 {
+    font-size: 2.5rem;
+    }
+    
+    .hero p {
+    font-size: 1.1rem;
+    }
+    
+    .about-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    }
+    
+    nav ul {
+    display: none;
+    }
+    
+    .trust-logos {
+    gap: 1.5rem;
+    }
+    }
+    
+    /* Accessibility */
+    @media (prefers-reduced-motion: reduce) {
+    * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    }
+    }
+    
+    .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+    }
+    
+    /* Focus styles */
+    a:focus, button:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+<header>
+<div class="container nav-container">
+  <img src="https://cdn.brandfetch.io/id6H9uvmla/w/403/h/69/theme/dark/logo.png?c=1bxsui03ox0f560idxmy90verlzMEj-14Ls" alt="Company logo" class="logo">
+  <nav>
+    <ul>
+      <li>
+        <a href="#services">Services</a>
+        </li>
+        <li>
+          <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#testimonials">Testimonials</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+              </li>
+            </ul>
+          </nav>
+          <a href="#contact" class="cta-button">Get Started</a>
+          </div>
+        </header>
+        
+        <section class="hero">
+          <div class="container">
+            <h1>Elevate Your Digital Presence</h1>
+              <p>Transform your online experience with cutting-edge solutions designed to drive growth and engagement</p>
+              <a href="#contact" class="cta-button">Start Your Project</a>
+              </div>
+            </section>
+            
+            <section class="trust-bar">
+              <div class="container">
+                <h3>Trusted by industry leaders</h3>
+                  <div class="trust-logos">
+                    <span>TechInnovate</span>
+                      <span>DigitalFront</span>
+                        <span>WebSolutions+</span>
+                          <span>CloudFirst</span>
+                            <span>NextGenTech</span>
+                            </div>
+                          </div>
+                        </section>
+                        
+                        <section class="benefits">
+                          <div class="container">
+                            <h2>Why Choose Us</h2>
+                              <div class="benefits-grid">
+                                <div class="benefit-card animate">
+                                  <div class="benefit-icon">🚀</div>
+                                    <h3>Lightning Fast</h3>
+                                      <p>Optimized performance that ensures your website loads in milliseconds</p>
+                                    </div>
+                                    <div class="benefit-card animate">
+                                      <div class="benefit-icon">🎯</div>
+                                        <h3>Precision Engineered</h3>
+                                          <p>Every pixel perfectly placed for maximum impact and conversion</p>
+                                        </div>
+                                        <div class="benefit-card animate">
+                                          <div class="benefit-icon">🛡️</div>
+                                            <h3>Secure & Reliable</h3>
+                                              <p>Enterprise-grade security protecting your business and customers</p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </section>
+                                      
+                                      <section id="services" class="services">
+                                        <div class="container">
+                                          <h2>Our Services</h2>
+                                            <div class="services-grid">
+                                              <div class="service-card animate">
+                                                <h3>Web Development</h3>
+                                                  <p>Custom websites built with modern frameworks and best practices</p>
+                                                </div>
+                                                <div class="service-card animate">
+                                                  <h3>UI/UX Design</h3>
+                                                    <p>User-centered designs that create seamless digital experiences</p>
+                                                  </div>
+                                                  <div class="service-card animate">
+                                                    <h3>Digital Strategy</h3>
+                                                      <p>Data-driven approaches to maximize your online potential</p>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </section>
+                                              
+                                              <section id="about" class="about">
+                                                <div class="container">
+                                                  <h2>About Our Company</h2>
+                                                    <div class="about-content">
+                                                      <div>
+                                                        <p>We are a team of passionate digital experts dedicated to creating exceptional online experiences. Our approach combines technical excellence with creative vision to deliver solutions that drive real business results.</p>
+                                                        <p>With years of industry experience, we understand what it takes to succeed in today's competitive digital landscape. We partner with our clients to transform their vision into reality.</p>
+                                                      </div>
+                                                      <div class="about-image">
+                                                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Our team working together">
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </section>
+                                                
+                                                <section id="testimonials" class="testimonials">
+                                                  <div class="container">
+                                                    <h2>Client Testimonials</h2>
+                                                      <div class="testimonials-grid">
+                                                        <div class="testimonial-card animate">
+                                                          <div class="testimonial-text">"Exceptional service and outstanding results. They transformed our online presence completely."</div>
+                                                            <div class="testimonial-author">Sarah Johnson, Marketing Director</div>
+                                                            </div>
+                                                            <div class="testimonial-card animate">
+                                                              <div class="testimonial-text">"Professional, innovative, and delivered beyond our expectations. Highly recommended!"</div>
+                                                                <div class="testimonial-author">Michael Chen, CEO</div>
+                                                                </div>
+                                                                <div class="testimonial-card animate">
+                                                                  <div class="testimonial-text">"The team's expertise and attention to detail made all the difference in our project."</div>
+                                                                    <div class="testimonial-author">Emily Rodriguez, Product Manager</div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                              </section>
+                                                              
+                                                              <section class="gallery">
+                                                                <div class="container">
+                                                                  <h2>Our Work</h2>
+                                                                    <div class="gallery-grid">
+                                                                      <div class="gallery-item">
+                                                                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dashboard design">
+                                                                      </div>
+                                                                      <div class="gallery-item">
+                                                                        <img src="https://images.unsplash.com/photo-1496171367470-9ed9a91aa931?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mobile app interface">
+                                                                      </div>
+                                                                      <div class="gallery-item">
+                                                                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="E-commerce website">
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </section>
+                                                                
+                                                                <section class="faq">
+                                                                  <div class="container">
+                                                                    <h2>Frequently Asked Questions</h2>
+                                                                      <div class="faq-list">
+                                                                        <div class="faq-item">
+                                                                          <div class="faq-question">How long does a typical project take?</div>
+                                                                            <div class="faq-answer">Project timelines vary based on complexity, but most websites take 4-8 weeks from concept to launch.</div>
+                                                                            </div>
+                                                                            <div class="faq-item">
+                                                                              <div class="faq-question">Do you provide ongoing support?</div>
+                                                                                <div class="faq-answer">Yes, we offer comprehensive maintenance and support packages to keep your website running smoothly.</div>
+                                                                                </div>
+                                                                                <div class="faq-item">
+                                                                                  <div class="faq-question">What technologies do you work with?</div>
+                                                                                    <div class="faq-answer">We use modern frameworks like React, Vue, and Next.js, along with robust backend technologies.</div>
+                                                                                    </div>
+                                                                                  </div>
+                                                                                </div>
+                                                                              </section>
+                                                                              
+                                                                              <section id="contact" class="cta">
+                                                                                <div class="container">
+                                                                                  <h2>Ready to Transform Your Digital Presence?</h2>
+                                                                                    <p>Let's discuss how we can help you achieve your goals with our expert solutions</p>
+                                                                                    <a href="#" class="cta-button" style="background: white; color: var(--primary);">Schedule a Consultation</a>
+                                                                                    </div>
+                                                                                  </section>
+                                                                                  
+                                                                                  <footer>
+                                                                                    <div class="container">
+                                                                                      <div class="footer-grid">
+                                                                                        <div class="footer-column">
+                                                                                          <h4>Company</h4>
+                                                                                            <ul>
+                                                                                              <li>
+                                                                                                <a href="#about">About Us</a>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                  <a href="#services">Services</a>
+                                                                                                  </li>
+                                                                                                  <li>
+                                                                                                    <a href="#testimonials">Testimonials</a>
+                                                                                                    </li>
+                                                                                                    <li>
+                                                                                                      <a href="#contact">Contact</a>
+                                                                                                      </li>
+                                                                                                    </ul>
+                                                                                                  </div>
+                                                                                                  <div class="footer-column">
+                                                                                                    <h4>Services</h4>
+                                                                                                      <ul>
+                                                                                                        <li>
+                                                                                                          <a href="#">Web Development</a>
+                                                                                                          </li>
+                                                                                                          <li>
+                                                                                                            <a href="#">UI/UX Design</a>
+                                                                                                            </li>
+                                                                                                            <li>
+                                                                                                              <a href="#">Digital Strategy</a>
+                                                                                                              </li>
+                                                                                                              <li>
+                                                                                                                <a href="#">Consulting</a>
+                                                                                                                </li>
+                                                                                                              </ul>
+                                                                                                            </div>
+                                                                                                            <div class="footer-column">
+                                                                                                              <h4>Connect</h4>
+                                                                                                                <ul>
+                                                                                                                  <li>
+                                                                                                                    <a href="#">LinkedIn</a>
+                                                                                                                    </li>
+                                                                                                                    <li>
+                                                                                                                      <a href="#">Twitter</a>
+                                                                                                                      </li>
+                                                                                                                      <li>
+                                                                                                                        <a href="#">Instagram</a>
+                                                                                                                        </li>
+                                                                                                                        <li>
+                                                                                                                          <a href="#">GitHub</a>
+                                                                                                                          </li>
+                                                                                                                        </ul>
+                                                                                                                      </div>
+                                                                                                                    </div>
+                                                                                                                    <div class="copyright">
+                                                                                                                      <p>&copy; 2024 Digital Solutions. All rights reserved.</p>
+                                                                                                                    </div>
+                                                                                                                  </div>
+                                                                                                                </footer>
+                                                                                                                
+                                                                                                                <script>
+                                                                                                                  // Intersection Observer for animations
+                                                                                                                  const observerOptions = {
+                                                                                                                  threshold: 0.1,
+                                                                                                                  rootMargin: '0px 0px -50px 0px'
+                                                                                                                  };
+                                                                                                                  
+                                                                                                                  const observer = new IntersectionObserver((entries) => {
+                                                                                                                  entries.forEach(entry => {
+                                                                                                                  if (entry.isIntersecting) {
+                                                                                                                  entry.target.classList.add('animate');
+                                                                                                                  observer.unobserve(entry.target);
+                                                                                                                  }
+                                                                                                                  });
+                                                                                                                  }, observerOptions);
+                                                                                                                  
+                                                                                                                  // Observe all animate elements
+                                                                                                                  document.querySelectorAll('.animate').forEach(element => {
+                                                                                                                  observer.observe(element);
+                                                                                                                  });
+                                                                                                                  
+                                                                                                                  // FAQ functionality
+                                                                                                                  document.querySelectorAll('.faq-question').forEach(question => {
+                                                                                                                  question.addEventListener('click', () => {
+                                                                                                                  const answer = question.nextElementSibling;
+                                                                                                                  answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+                                                                                                                  });
+                                                                                                                  });
+                                                                                                                  
+                                                                                                                  // Smooth scrolling for navigation
+                                                                                                                  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                                                                                                                  anchor.addEventListener('click', function (e) {
+                                                                                                                  e.preventDefault();
+                                                                                                                  const target = document.querySelector(this.getAttribute('href'));
+                                                                                                                  if (target) {
+                                                                                                                  target.scrollIntoView({
+                                                                                                                  behavior: 'smooth',
+                                                                                                                  block: 'start'
+                                                                                                                  });
+                                                                                                                  }
+                                                                                                                  });
+                                                                                                                  });
+                                                                                                                  
+                                                                                                                  // Mobile menu toggle (would be implemented with actual mobile menu)
+                                                                                                                  console.log('Premium website loaded successfully');
+                                                                                                                </script>
+                                                                                                              </body>
+                                                                                                            </html>
