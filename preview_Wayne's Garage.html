@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wayne's Garage - Philadelphia's Trusted Auto Repair Shop</title>
+  <meta name="description" content="Family-owned auto repair shop in Philadelphia with 39 years of experience. ASE-certified technicians, comprehensive services, and 2-year nationwide warranty.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+    --primary: #0057B8;
+    --secondary: #FFD700;
+    --accent: #E63946;
+    --background: #F8F9FA;
+    --text: #333333;
+    --light-text: #666666;
+    --white: #FFFFFF;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    }
+    
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    
+    body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--background);
+    overflow-x: hidden;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    }
+    
+    .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    }
+    
+    .btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background-color: var(--primary);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    }
+    
+    .btn:hover {
+    background-color: #004399;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+    }
+    
+    .btn-secondary {
+    background-color: var(--secondary);
+    color: var(--text);
+    }
+    
+    .btn-secondary:hover {
+    background-color: #E6C200;
+    }
+    
+    .btn-accent {
+    background-color: var(--accent);
+    }
+    
+    .btn-accent:hover {
+    background-color: #D32F2F;
+    }
+    
+    section {
+    padding: 80px 0;
+    }
+    
+    .text-center {
+    text-align: center;
+    }
+    
+    .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    }
+    
+    .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary);
+    }
+    
+    .text-center .section-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+    }
+    
+    /* Header */
+    header {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    }
+    
+    .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    }
+    
+    .logo img {
+    height: 50px;
+    width: auto;
+    }
+    
+    .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    }
+    
+    .nav-menu a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    transition: var(--transition);
+    }
+    
+    .nav-menu a:hover {
+    color: var(--primary);
+    }
+    
+    .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    }
+    
+    /* Hero Section */
+    .hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1492148240977-2b2b9b484181?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=80') no-repeat center/cover;
+    color: var(--white);
+    padding: 160px 0 100px;
+    text-align: center;
+    }
+    
+    .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease;
+    }
+    
+    .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 1s ease 0.2s both;
+    }
+    
+    .hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    animation: fadeInUp 1s ease 0.4s both;
+    }
+    
+    /* Trust Bar */
+    .trust-bar {
+    background-color: var(--white);
+    padding: 40px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    
+    .trust-items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    }
+    
+    .trust-item {
+    text-align: center;
+    min-width: 150px;
+    }
+    
+    .trust-item img {
+    height: 50px;
+    margin-bottom: 10px;
+    opacity: 0.8;
+    transition: var(--transition);
+    }
+    
+    .trust-item:hover img {
+    opacity: 1;
+    transform: scale(1.05);
+    }
+    
+    /* Benefits */
+    .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    }
+    
+    .benefit-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    text-align: center;
+    }
+    
+    .benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .benefit-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+    }
+    
+    /* Services */
+    .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    }
+    
+    .service-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    text-align: center;
+    }
+    
+    .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .service-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+    }
+    
+    /* About */
+    .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    }
+    
+    .about-image {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    }
+    
+    .about-image img {
+    width: 100%;
+    height: auto;
+    transition: var(--transition);
+    }
+    
+    .about-image:hover img {
+    transform: scale(1.05);
+    }
+    
+    /* Testimonials */
+    .testimonials-slider {
+    margin-top: 40px;
+    position: relative;
+    }
+    
+    .testimonial-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin: 0 15px;
+    text-align: center;
+    }
+    
+    .testimonial-text {
+    font-style: italic;
+    margin-bottom: 20px;
+    position: relative;
+    }
+    
+    .testimonial-text::before,
+    .testimonial-text::after {
+    content: '"';
+    font-size: 3rem;
+    color: var(--primary);
+    opacity: 0.2;
+    position: absolute;
+    }
+    
+    .testimonial-text::before {
+    top: -20px;
+    left: -10px;
+    }
+    
+    .testimonial-text::after {
+    bottom: -40px;
+    right: -10px;
+    }
+    
+    .testimonial-author {
+    font-weight: 600;
+    color: var(--primary);
+    }
+    
+    /* Gallery */
+    .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 40px;
+    }
+    
+    .gallery-item {
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    height: 250px;
+    }
+    
+    .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+    }
+    
+    .gallery-item:hover img {
+    transform: scale(1.1);
+    }
+    
+    /* FAQ */
+    .faq-container {
+    max-width: 800px;
+    margin: 40px auto 0;
+    }
+    
+    .faq-item {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    }
+    
+    .faq-question {
+    background: var(--white);
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    }
+    
+    .faq-answer {
+    background: var(--white);
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    }
+    
+    .faq-item.active .faq-answer {
+    padding: 20px;
+    max-height: 500px;
+    }
+    
+    /* CTA */
+    .cta {
+    background: linear-gradient(rgba(0, 87, 184, 0.9), rgba(0, 87, 184, 0.9)), url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=80') no-repeat center/cover;
+    color: var(--white);
+    text-align: center;
+    padding: 100px 0;
+    }
+    
+    .cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    }
+    
+    .cta p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    
+    /* Footer */
+    footer {
+    background-color: #2c3e50;
+    color: var(--white);
+    padding: 60px 0 30px;
+    }
+    
+    .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+    }
+    
+    .footer-logo img {
+    height: 50px;
+    margin-bottom: 20px;
+    }
+    
+    .footer-contact p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    }
+    
+    .footer-hours p {
+    margin-bottom: 10px;
+    }
+    
+    .footer-social {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    }
+    
+    .social-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    }
+    
+    .social-icon:hover {
+    background: var(--primary);
+    transform: translateY(-3px);
+    }
+    
+    .footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+    from {
+    opacity: 0;
+    transform: translateY(30px);
+    }
+    to {
+    opacity: 1;
+    transform: translateY(0);
+    }
+    }
+    
+    /* Responsive */
+    @media (max-width: 992px) {
+    .about-content {
+    grid-template-columns: 1fr;
+    }
+    
+    .hero h1 {
+    font-size: 2.5rem;
+    }
+    }
+    
+    @media (max-width: 768px) {
+    .nav-menu {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: var(--white);
+    width: 100%;
+    height: calc(100vh - 80px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    }
+    
+    .nav-menu.active {
+    left: 0;
+    }
+    
+    .mobile-menu-btn {
+    display: block;
+    }
+    
+    .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    }
+    
+    .trust-items {
+    flex-direction: column;
+    gap: 30px;
+    }
+    
+    .section-title {
+    font-size: 2rem;
+    }
+    }
+    
+    @media (max-width: 576px) {
+    section {
+    padding: 60px 0;
+    }
+    
+    .hero {
+    padding: 140px 0 80px;
+    }
+    
+    .hero h1 {
+    font-size: 2rem;
+    }
+    
+    .hero p {
+    font-size: 1rem;
+    }
+    }
+  </style>
+</head>
+<body>
+<!-- Header -->
+<header>
+<div class="container header-container">
+  <div class="logo">
+    <img src="https://cdn.brandfetch.io/idS9imRwwc/w/600/h/506/theme/dark/logo.png?c=1bxsui03ox0f560idxmy90verlzMEj-14Ls" alt="Wayne's Garage logo">
+  </div>
+  <nav>
+    <button class="mobile-menu-btn">☰</button>
+      <ul class="nav-menu">
+        <li>
+          <a href="#services">Services</a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#testimonials">Testimonials</a>
+              </li>
+              <li>
+                <a href="#gallery">Gallery</a>
+                </li>
+                <li>
+                  <a href="#contact">Contact</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </header>
+          
+          <!-- Hero Section -->
+          <section class="hero">
+            <div class="container">
+              <h1>Philadelphia's Most Trusted Auto Repair Shop</h1>
+                <p>Family-owned with 39 years of experience providing quality automotive repair and maintenance services with ASE-certified technicians and a 2-year nationwide warranty.</p>
+                <div class="hero-buttons">
+                  <a href="#contact" class="btn">Schedule Service</a>
+                    <a href="#contact" class="btn btn-secondary">Request Quote</a>
+                    </div>
+                  </div>
+                </section>
+                
+                <!-- Trust Bar -->
+                <section class="trust-bar">
+                  <div class="container">
+                    <div class="trust-items">
+                      <div class="trust-item">
+                        <span style="font-size: 2rem; color: var(--primary);">⭐</span>
+                          <p>ASE Certified</p>
+                        </div>
+                        <div class="trust-item">
+                          <span style="font-size: 2rem; color: var(--primary);">🏆</span>
+                            <p>AAA Approved</p>
+                          </div>
+                          <div class="trust-item">
+                            <span style="font-size: 2rem; color: var(--primary);">🔧</span>
+                              <p>39 Years Experience</p>
+                            </div>
+                            <div class="trust-item">
+                              <span style="font-size: 2rem; color: var(--primary);">💯</span>
+                                <p>CARFAX 5-Star</p>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
+                        
+                        <!-- Benefits -->
+                        <section id="benefits">
+                          <div class="container">
+                            <h2 class="section-title text-center">Why Choose Wayne's Garage</h2>
+                              <div class="benefits-grid">
+                                <div class="benefit-card">
+                                  <div class="benefit-icon">👨‍👩‍👧‍👦</div>
+                                    <h3>Family Owned & Operated</h3>
+                                      <p>We treat every customer like family with personalized service and honest advice.</p>
+                                    </div>
+                                    <div class="benefit-card">
+                                      <div class="benefit-icon">⚙️</div>
+                                        <h3>ASE Certified Technicians</h3>
+                                          <p>Our team has over 110 years of combined experience with industry certifications.</p>
+                                        </div>
+                                        <div class="benefit-card">
+                                          <div class="benefit-icon">🛡️</div>
+                                            <h3>2-Year Nationwide Warranty</h3>
+                                              <p>Peace of mind with comprehensive warranty coverage on all our services.</p>
+                                            </div>
+                                            <div class="benefit-card">
+                                              <div class="benefit-icon">📍</div>
+                                                <h3>Convenient Location</h3>
+                                                  <p>Easy access near public transit with ample parking available.</p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </section>
+                                          
+                                          <!-- Services -->
+                                          <section id="services" style="background-color: var(--white);">
+                                            <div class="container">
+                                              <h2 class="section-title text-center">Our Services</h2>
+                                                <div class="services-grid">
+                                                  <div class="service-card">
+                                                    <div class="service-icon">🔍</div>
+                                                      <h3>State Inspections</h3>
+                                                        <p>Complete Pennsylvania state vehicle inspections to keep you legal and safe on the road.</p>
+                                                      </div>
+                                                      <div class="service-card">
+                                                        <div class="service-icon">🌫️</div>
+                                                          <h3>Emission Testing</h3>
+                                                            <p>Professional emission testing and diagnosis to meet environmental standards.</p>
+                                                          </div>
+                                                          <div class="service-card">
+                                                            <div class="service-icon">🛑</div>
+                                                              <h3>Brake Services</h3>
+                                                                <p>Complete brake inspection, repair, and replacement for optimal safety.</p>
+                                                              </div>
+                                                              <div class="service-card">
+                                                                <div class="service-icon">🔋</div>
+                                                                  <h3>Battery Services</h3>
+                                                                    <p>Battery testing, replacement, and electrical system diagnostics.</p>
+                                                                  </div>
+                                                                  <div class="service-card">
+                                                                    <div class="service-icon">🧭</div>
+                                                                      <h3>Alignments</h3>
+                                                                        <p>Precision wheel alignments to ensure proper handling and tire wear.</p>
+                                                                      </div>
+                                                                      <div class="service-card">
+                                                                        <div class="service-icon">🛢️</div>
+                                                                          <h3>Oil Changes</h3>
+                                                                            <p>Complete oil and lube services with quality filters and fluids.</p>
+                                                                          </div>
+                                                                          <div class="service-card">
+                                                                            <div class="service-icon">🔧</div>
+                                                                              <h3>Maintenance Services</h3>
+                                                                                <p>Comprehensive vehicle maintenance to keep your car running smoothly.</p>
+                                                                              </div>
+                                                                              <div class="service-card">
+                                                                                <div class="service-icon">💳</div>
+                                                                                  <h3>Financing Options</h3>
+                                                                                    <p>Flexible payment plans to make quality auto care accessible.</p>
+                                                                                  </div>
+                                                                                </div>
+                                                                              </div>
+                                                                            </section>
+                                                                            
+                                                                            <!-- About -->
+                                                                            <section id="about">
+                                                                              <div class="container">
+                                                                                <div class="about-content">
+                                                                                  <div class="about-text">
+                                                                                    <h2 class="section-title">39 Years of Trusted Service</h2>
+                                                                                      <p>Since 1985, Wayne's Garage has been serving the Philadelphia community with honest, reliable auto repair services. As a family-owned business, we've built our reputation on trust, quality workmanship, and personalized customer care.</p>
+                                                                                      <p>Our team of ASE-certified technicians brings over 110 years of combined experience to every repair. We're proud to be an AAA-Approved Repair Facility and CARFAX Top-Rated Service Center with a perfect 5-star rating.</p>
+                                                                                      <p>Located conveniently at 4521 Springfield Ave, we're easily accessible by public transit and offer a comfortable waiting area for our customers. We stand behind our work with a 2-year/24,000-mile nationwide warranty.</p>
+                                                                                      <a href="#contact" class="btn" style="margin-top: 20px;">Visit Our Shop</a>
+                                                                                      </div>
+                                                                                      <div class="about-image">
+                                                                                        <img src="https://stauditcentralusaa01prod.blob.core.windows.net/files/Accounts/1/Locations/dc2469c7-e654-4cc0-aaa2-4b978028dbce/SiteInfo/c90fb7bd-44cd-44cd-a529-363a3f68b0b0.png" alt="Wayne's Garage exterior">
+                                                                                      </div>
+                                                                                    </div>
+                                                                                  </div>
+                                                                                </section>
+                                                                                
+                                                                                <!-- Testimonials -->
+                                                                                <section id="testimonials" style="background-color: var(--white);">
+                                                                                  <div class="container">
+                                                                                    <h2 class="section-title text-center">What Our Customers Say</h2>
+                                                                                      <div class="testimonials-slider">
+                                                                                        <div class="testimonial-card">
+                                                                                          <p class="testimonial-text">"Wayne's Garage has been servicing my family's cars for over 20 years. Their honesty and expertise keep us coming back. They recently repaired my brakes and the service was exceptional."</p>
+                                                                                            <p class="testimonial-author">- Michael R., Regular Customer</p>
+                                                                                            </div>
+                                                                                            <div class="testimonial-card">
+                                                                                              <p class="testimonial-text">"I needed an emission test and state inspection quickly. Wayne's team got me in same day and completed everything efficiently. Their customer service is outstanding!"</p>
+                                                                                                <p class="testimonial-author">- Sarah T., Local Resident</p>
+                                                                                                </div>
+                                                                                                <div class="testimonial-card">
+                                                                                                  <p class="testimonial-text">"After a bad experience at a chain shop, I found Wayne's Garage. Their technicians explained everything clearly and fixed my alignment issue perfectly. True professionals."</p>
+                                                                                                    <p class="testimonial-author">- James K., Satisfied Customer</p>
+                                                                                                    </div>
+                                                                                                  </div>
+                                                                                                </div>
+                                                                                              </section>
+                                                                                              
+                                                                                              <!-- Gallery -->
+                                                                                              <section id="gallery">
+                                                                                                <div class="container">
+                                                                                                  <h2 class="section-title text-center">Our Garage & Work</h2>
+                                                                                                    <div class="gallery-grid">
+                                                                                                      <div class="gallery-item">
+                                                                                                        <img src="https://stauditcentralusaa01prod.blob.core.windows.net/files/Accounts/1/Locations/dc2469c7-e654-4cc0-aaa2-4b978028dbce/SiteInfo/c90fb7bd-44cd-44cd-a529-363a3f68b0b0.png" alt="Wayne's Garage facility">
+                                                                                                      </div>
+                                                                                                      <div class="gallery-item">
+                                                                                                        <img src="https://images.unsplash.com/photo-1580274437636-67a84c70ccfe?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Auto repair service">
+                                                                                                      </div>
+                                                                                                      <div class="gallery-item">
+                                                                                                        <img src="https://images.unsplash.com/photo-1603712618944-7bb3c8a1c8c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Technician working on vehicle">
+                                                                                                      </div>
+                                                                                                      <div class="gallery-item">
+                                                                                                        <img src="https://images.unsplash.com/photo-1494908930090-6c2f64cdb73d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Auto repair tools">
+                                                                                                      </div>
+                                                                                                    </div>
+                                                                                                  </div>
+                                                                                                </section>
+                                                                                                
+                                                                                                <!-- FAQ -->
+                                                                                                <section id="faq" style="background-color: var(--white);">
+                                                                                                  <div class="container">
+                                                                                                    <h2 class="section-title text-center">Frequently Asked Questions</h2>
+                                                                                                      <div class="faq-container">
+                                                                                                        <div class="faq-item">
+                                                                                                          <div class="faq-question">What are your hours of operation? <span>+</span>
+                                                                                                          </div>
+                                                                                                          <div class="faq-answer">
+                                                                                                            <p>We're open Monday through Friday from 7:30 AM to 6:00 PM, and Saturday from 8:00 AM to 4:00 PM. We're closed on Sundays.</p>
+                                                                                                          </div>
+                                                                                                        </div>
+                                                                                                        <div class="faq-item">
+                                                                                                          <div class="faq-question">Do you offer warranties on your repairs? <span>+</span>
+                                                                                                          </div>
+                                                                                                          <div class="faq-answer">
+                                                                                                            <p>Yes! We stand behind all our work with a 2-year/24,000-mile nationwide warranty for your peace of mind.</p>
+                                                                                                          </div>
+                                                                                                        </div>
+                                                                                                        <div class="faq-item">
+                                                                                                          <div class="faq-question">How long does a state inspection take? <span>+</span>
+                                                                                                          </div>
+                                                                                                          <div class="faq-answer">
+                                                                                                            <p>Most state inspections are completed within 45-60 minutes. We offer wait-in-your-car service for this quick procedure.</p>
+                                                                                                          </div>
+                                                                                                        </div>
+                                                                                                        <div class="faq-item">
+                                                                                                          <div class="faq-question">Do I need an appointment for service? <span>+</span>
+                                                                                                          </div>
+                                                                                                          <div class="faq-answer">
+                                                                                                            <p>While appointments are recommended to ensure prompt service, we welcome walk-ins based on availability.</p>
+                                                                                                          </div>
+                                                                                                        </div>
+                                                                                                        <div class="faq-item">
+                                                                                                          <div class="faq-question">What forms of payment do you accept? <span>+</span>
+                                                                                                          </div>
+                                                                                                          <div class="faq-answer">
+                                                                                                            <p>We accept all major credit cards, cash, and offer financing options for larger repairs through approved lenders.</p>
+                                                                                                          </div>
+                                                                                                        </div>
+                                                                                                      </div>
+                                                                                                    </div>
+                                                                                                  </section>
+                                                                                                  
+                                                                                                  <!-- CTA -->
+                                                                                                  <section id="cta" class="cta">
+                                                                                                    <div class="container">
+                                                                                                      <h2>Ready for Quality Auto Service?</h2>
+                                                                                                        <p>Schedule your appointment today and experience the Wayne's Garage difference. Family-owned service with professional results.</p>
+                                                                                                        <a href="#contact" class="btn btn-accent">Schedule Now</a>
+                                                                                                        </div>
+                                                                                                      </section>
+                                                                                                      
+                                                                                                      <!-- Footer -->
+                                                                                                      <footer id="contact">
+                                                                                                        <div class="container">
+                                                                                                          <div class="footer-grid">
+                                                                                                            <div class="footer-info">
+                                                                                                              <div class="footer-logo">
+                                                                                                                <img src="https://cdn.brandfetch.io/idS9imRwwc/w/600/h/506/theme/dark/logo.png?c=1bxsui03ox0f560idxmy90verlzMEj-14Ls" alt="Wayne's Garage logo">
+                                                                                                              </div>
+                                                                                                              <p>Philadelphia's trusted auto repair shop with 39 years of experience serving the community with quality service and honest repairs.</p>
+                                                                                                            </div>
+                                                                                                            <div class="footer-contact">
+                                                                                                              <h3>Contact Us</h3>
+                                                                                                                <p>📍 4521 Springfield Ave, Philadelphia, PA 19143</p>
+                                                                                                                <p>📞 (215) 555-0123</p>
+                                                                                                                <p>✉️ service@waynesgarage.com</p>
+                                                                                                              </div>
+                                                                                                              <div class="footer-hours">
+                                                                                                                <h3>Business Hours</h3>
+                                                                                                                  <p>Monday - Friday: 7:30 AM - 6:00 PM</p>
+                                                                                                                  <p>Saturday: 8:00 AM - 4:00 PM</p>
+                                                                                                                  <p>Sunday: Closed</p>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                              <div class="footer-bottom">
+                                                                                                                <p>&copy; 2024 Wayne's Garage. All rights reserved.</p>
+                                                                                                              </div>
+                                                                                                            </div>
+                                                                                                          </footer>
+                                                                                                          
+                                                                                                          <script>
+                                                                                                            // Mobile Menu Toggle
+                                                                                                            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+                                                                                                            const navMenu = document.querySelector('.nav-menu');
+                                                                                                            
+                                                                                                            mobileMenuBtn.addEventListener('click', () => {
+                                                                                                            navMenu.classList.toggle('active');
+                                                                                                            });
+                                                                                                            
+                                                                                                            // FAQ Accordion
+                                                                                                            const faqItems = document.querySelectorAll('.faq-item');
+                                                                                                            
+                                                                                                            faqItems.forEach(item => {
+                                                                                                            const question = item.querySelector('.faq-question');
+                                                                                                            
+                                                                                                            question.addEventListener('click', () => {
+                                                                                                            item.classList.toggle('active');
+                                                                                                            
+                                                                                                            // Close other open items
+                                                                                                            faqItems.forEach(otherItem => {
+                                                                                                            if (otherItem !== item && otherItem.classList.contains('active')) {
+                                                                                                            otherItem.classList.remove('active');
+                                                                                                            }
+                                                                                                            });
+                                                                                                            });
+                                                                                                            });
+                                                                                                            
+                                                                                                            // Smooth scrolling for navigation links
+                                                                                                            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                                                                                                            anchor.addEventListener('click', function (e) {
+                                                                                                            e.preventDefault();
+                                                                                                            
+                                                                                                            const targetId = this.getAttribute('href');
+                                                                                                            if (targetId === '#') return;
+                                                                                                            
+                                                                                                            const targetElement = document.querySelector(targetId);
+                                                                                                            if (targetElement) {
+                                                                                                            // Close mobile menu if open
+                                                                                                            navMenu.classList.remove('active');
+                                                                                                            
+                                                                                                            window.scrollTo({
+                                                                                                            top: targetElement.offsetTop - 80,
+                                                                                                            behavior: 'smooth'
+                                                                                                            });
+                                                                                                            }
+                                                                                                            });
+                                                                                                            });
+                                                                                                            
+                                                                                                            // Simple animations on scroll
+                                                                                                            const animateOnScroll = () => {
+                                                                                                            const elements = document.querySelectorAll('.benefit-card, .service-card, .gallery-item');
+                                                                                                            
+                                                                                                            elements.forEach(element => {
+                                                                                                            const elementPosition = element.getBoundingClientRect().top;
+                                                                                                            const screenPosition = window.innerHeight / 1.3;
+                                                                                                            
+                                                                                                            if (elementPosition < screenPosition) {
+                                                                                                            element.style.opacity = '1';
+                                                                                                            element.style.transform = 'translateY(0)';
+                                                                                                            }
+                                                                                                            });
+                                                                                                            };
+                                                                                                            
+                                                                                                            // Initialize animation states
+                                                                                                            document.querySelectorAll('.benefit-card, .service-card, .gallery-item').forEach(element => {
+                                                                                                            element.style.opacity = '0';
+                                                                                                            element.style.transform = 'translateY(20px)';
+                                                                                                            element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                                                                                                            });
+                                                                                                            
+                                                                                                            // Listen for scroll events
+                                                                                                            window.addEventListener('scroll', animateOnScroll);
+                                                                                                            // Initial check
+                                                                                                            animateOnScroll();
+                                                                                                          </script>
+                                                                                                        </body>
+                                                                                                      </html>
