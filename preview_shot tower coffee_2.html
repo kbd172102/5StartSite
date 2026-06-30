@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shot Tower Coffee | Premium Craft Coffee Roaster & Cafe</title>
+  <meta name="description" content="Discover artisanal coffee roasted to perfection at Shot Tower Coffee. Experience premium craft coffee, espresso-based drinks, and a warm, inviting atmosphere.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+    --primary: #8B4513;
+    --secondary: #D2B48C;
+    --accent: #A0522D;
+    --background: #F5F5DC;
+    --text-dark: #2C1810;
+    --text-light: #5C3D2E;
+    --white: #FFFFFF;
+    --shadow: 0 4px 20px rgba(139, 69, 19, 0.1);
+    --transition: all 0.3s ease;
+    }
+    
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    
+    html {
+    scroll-behavior: smooth;
+    }
+    
+    body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--background);
+    overflow-x: hidden;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    }
+    
+    h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    }
+    
+    h2 {
+    font-size: 2rem;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+    }
+    
+    h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+    }
+    
+    p {
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+    }
+    
+    .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    }
+    
+    section {
+    padding: 4rem 0;
+    }
+    
+    .btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: var(--shadow);
+    }
+    
+    .btn:hover {
+    background: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(139, 69, 19, 0.2);
+    }
+    
+    .btn-secondary {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    }
+    
+    .btn-secondary:hover {
+    background: var(--primary);
+    color: var(--white);
+    }
+    
+    /* Header */
+    header {
+    background: var(--white);
+    box-shadow: var(--shadow);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: var(--transition);
+    }
+    
+    header.scrolled {
+    padding: 0.5rem 0;
+    }
+    
+    .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    }
+    
+    .logo img {
+    height: 50px;
+    transition: var(--transition);
+    }
+    
+    .nav-menu {
+    display: flex;
+    list-style: none;
+    }
+    
+    .nav-menu li {
+    margin-left: 2rem;
+    }
+    
+    .nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    transition: var(--transition);
+    position: relative;
+    }
+    
+    .nav-menu a:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: var(--transition);
+    }
+    
+    .nav-menu a:hover {
+    color: var(--accent);
+    }
+    
+    .nav-menu a:hover:after {
+    width: 100%;
+    }
+    
+    .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--primary);
+    cursor: pointer;
+    }
+    
+    /* Hero Section */
+    .hero {
+    background: linear-gradient(rgba(139, 69, 19, 0.7), rgba(210, 180, 140, 0.5)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    padding-top: 80px;
+    }
+    
+    .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease;
+    }
+    
+    .hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+    }
+    
+    .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--white);
+    }
+    
+    .hero-btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    }
+    
+    /* Trust Bar */
+    .trust-bar {
+    background: var(--white);
+    padding: 1.5rem 0;
+    box-shadow: var(--shadow);
+    }
+    
+    .trust-items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    }
+    
+    .trust-item {
+    text-align: center;
+    padding: 0.5rem;
+    }
+    
+    .trust-item i {
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    }
+    
+    .trust-item p {
+    font-weight: 700;
+    margin: 0;
+    color: var(--text-dark);
+    }
+    
+    /* Benefits */
+    .benefits {
+    background: var(--white);
+    }
+    
+    .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    }
+    
+    .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    }
+    
+    .benefit-card {
+    background: var(--background);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    }
+    
+    .benefit-card:hover {
+    transform: translateY(-10px);
+    }
+    
+    .benefit-icon {
+    font-size: 3rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    }
+    
+    /* Services */
+    .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    }
+    
+    .service-card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    }
+    
+    .service-card:hover {
+    transform: translateY(-5px);
+    }
+    
+    .service-img {
+    height: 200px;
+    overflow: hidden;
+    }
+    
+    .service-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+    }
+    
+    .service-card:hover .service-img img {
+    transform: scale(1.1);
+    }
+    
+    .service-content {
+    padding: 1.5rem;
+    }
+    
+    /* About */
+    .about {
+    background: var(--white);
+    }
+    
+    .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    }
+    
+    .about-text {
+    padding-right: 1rem;
+    }
+    
+    .about-img {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    }
+    
+    .about-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    }
+    
+    /* Testimonials */
+    .testimonials {
+    background: var(--background);
+    }
+    
+    .testimonials-slider {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    }
+    
+    .testimonial {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    margin: 0 1rem;
+    display: none;
+    }
+    
+    .testimonial.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+    }
+    
+    .testimonial-text {
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    }
+    
+    .testimonial-author {
+    font-weight: 700;
+    color: var(--accent);
+    }
+    
+    .testimonial-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 1rem;
+    }
+    
+    .testimonial-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--secondary);
+    cursor: pointer;
+    transition: var(--transition);
+    }
+    
+    .testimonial-dot.active {
+    background: var(--accent);
+    transform: scale(1.2);
+    }
+    
+    /* Gallery */
+    .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    }
+    
+    .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    height: 250px;
+    cursor: pointer;
+    }
+    
+    .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+    }
+    
+    .gallery-item:hover img {
+    transform: scale(1.1);
+    }
+    
+    .gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(139, 69, 19, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+    }
+    
+    .gallery-item:hover .gallery-overlay {
+    opacity: 1;
+    }
+    
+    /* FAQ */
+    .faq {
+    background: var(--white);
+    }
+    
+    .faq-item {
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    }
+    
+    .faq-question {
+    background: var(--background);
+    padding: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: between;
+    align-items: center;
+    font-weight: 700;
+    }
+    
+    .faq-question:after {
+    content: '+';
+    font-size: 1.5rem;
+    transition: var(--transition);
+    }
+    
+    .faq-item.active .faq-question:after {
+    transform: rotate(45deg);
+    }
+    
+    .faq-answer {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: var(--transition);
+    }
+    
+    .faq-item.active .faq-answer {
+    padding: 1.5rem;
+    max-height: 500px;
+    }
+    
+    /* CTA */
+    .cta {
+    background: linear-gradient(rgba(139, 69, 19, 0.8), rgba(210, 180, 140, 0.7)), url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    text-align: center;
+    padding: 5rem 0;
+    }
+    
+    .cta h2 {
+    color: var(--white);
+    }
+    
+    .cta h2:after {
+    background: var(--white);
+    left: 50%;
+    transform: translateX(-50%);
+    }
+    
+    .cta p {
+    color: var(--white);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    }
+    
+    /* Footer */
+    footer {
+    background: var(--text-dark);
+    color: var(--white);
+    padding: 3rem 0 1rem;
+    }
+    
+    .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+    }
+    
+    .footer-col h3 {
+    color: var(--secondary);
+    margin-bottom: 1.5rem;
+    position: relative;
+    }
+    
+    .footer-col h3:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
+    }
+    
+    .footer-col p, .footer-col a {
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+    display: block;
+    text-decoration: none;
+    transition: var(--transition);
+    }
+    
+    .footer-col a:hover {
+    color: var(--white);
+    padding-left: 5px;
+    }
+    
+    .social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    }
+    
+    .social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--accent);
+    border-radius: 50%;
+    transition: var(--transition);
+    }
+    
+    .social-links a:hover {
+    background: var(--primary);
+    transform: translateY(-3px);
+    }
+    
+    .copyright {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(210, 180, 140, 0.3);
+    color: var(--secondary);
+    font-size: 0.9rem;
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+    from {
+    opacity: 0;
+    transform: translateY(30px);
+    }
+    to {
+    opacity: 1;
+    transform: translateY(0);
+    }
+    }
+    
+    @keyframes fadeIn {
+    from {
+    opacity: 0;
+    }
+    to {
+    opacity: 1;
+    }
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+    h1 {
+    font-size: 2rem;
+    }
+    
+    h2 {
+    font-size: 1.8rem;
+    }
+    
+    .mobile-menu-btn {
+    display: block;
+    }
+    
+    .nav-menu {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: var(--white);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 2rem;
+    transition: var(--transition);
+    }
+    
+    .nav-menu.active {
+    left: 0;
+    }
+    
+    .nav-menu li {
+    margin: 1rem 0;
+    }
+    
+    .hero h1 {
+    font-size: 2.5rem;
+    }
+    
+    .hero-btns {
+    flex-direction: column;
+    align-items: center;
+    }
+    
+    .trust-items {
+    flex-direction: column;
+    gap: 1.5rem;
+    }
+    
+    .about-content {
+    grid-template-columns: 1fr;
+    }
+    
+    .about-text {
+    padding-right: 0;
+    }
+    }
+  </style>
+</head>
+<body>
+<!-- Header -->
+<header id="header">
+<div class="container header-container">
+  <div class="logo">
+    <a href="#hero">
+      <img src="https://tempfile.redpandaai.co/kieai/705999/images/downloaded/shot_tower_coffee_logo.png" alt="Shot Tower Coffee logo">
+    </a>
+  </div>
+  <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+    <ul class="nav-menu" id="navMenu">
+      <li>
+        <a href="#hero">Home</a>
+        </li>
+        <li>
+          <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#services">Services</a>
+            </li>
+            <li>
+              <a href="#testimonials">Testimonials</a>
+              </li>
+              <li>
+                <a href="#gallery">Gallery</a>
+                </li>
+                <li>
+                  <a href="#contact" class="btn btn-secondary">Visit Us</a>
+                  </li>
+                </ul>
+              </div>
+            </header>
+            
+            <!-- Hero Section -->
+            <section class="hero" id="hero">
+              <div class="container">
+                <div class="hero-content">
+                  <h1>Artisanal Coffee, Perfected</h1>
+                    <p>Discover the rich flavors of premium craft coffee roasted to perfection at Shot Tower Coffee. Experience the perfect blend of tradition and innovation in every cup.</p>
+                    <div class="hero-btns">
+                      <a href="#services" class="btn">Our Coffee</a>
+                        <a href="#contact" class="btn btn-secondary">Visit Our Cafe</a>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  
+                  <!-- Trust Bar -->
+                  <section class="trust-bar">
+                    <div class="container">
+                      <div class="trust-items">
+                        <div class="trust-item">
+                          <i>☕</i>
+                          <p>Freshly Roasted Beans</p>
+                        </div>
+                        <div class="trust-item">
+                          <i>🌱</i>
+                          <p>Ethically Sourced</p>
+                        </div>
+                        <div class="trust-item">
+                          <i>👨‍🍳</i>
+                          <p>Expert Baristas</p>
+                        </div>
+                        <div class="trust-item">
+                          <i>⭐</i>
+                          <p>Premium Quality</p>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  
+                  <!-- Benefits -->
+                  <section class="benefits">
+                    <div class="container">
+                      <div class="section-header">
+                        <h2>Why Choose Shot Tower Coffee</h2>
+                          <p>Experience the difference that craftsmanship and attention to detail make in every cup</p>
+                        </div>
+                        <div class="benefits-grid">
+                          <div class="benefit-card">
+                            <div class="benefit-icon">🔥</div>
+                              <h3>Small-Batch Roasting</h3>
+                                <p>Our beans are roasted in small batches to ensure optimal flavor development and freshness.</p>
+                              </div>
+                              <div class="benefit-card">
+                                <div class="benefit-icon">🌍</div>
+                                  <h3>Global Sourcing</h3>
+                                    <p>We source the finest coffee beans from sustainable farms around the world.</p>
+                                  </div>
+                                  <div class="benefit-card">
+                                    <div class="benefit-icon">💡</div>
+                                      <h3>Innovative Techniques</h3>
+                                        <p>Combining traditional methods with modern innovation for exceptional coffee experiences.</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </section>
+                                
+                                <!-- Services -->
+                                <section class="services" id="services">
+                                  <div class="container">
+                                    <div class="section-header">
+                                      <h2>Our Coffee Experience</h2>
+                                        <p>From bean to cup, we're passionate about every step of the coffee journey</p>
+                                      </div>
+                                      <div class="services-grid">
+                                        <div class="service-card">
+                                          <div class="service-img">
+                                            <img src="https://images.unsplash.com/photo-1587734195503-904fca47e1e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Coffee Roasting">
+                                          </div>
+                                          <div class="service-content">
+                                            <h3>Coffee Roasting</h3>
+                                              <p>Our expert roasters carefully craft each batch to highlight the unique characteristics of every bean.</p>
+                                            </div>
+                                          </div>
+                                          <div class="service-card">
+                                            <div class="service-img">
+                                              <img src="https://images.unsplash.com/photo-1568649929103-28f10d6c8c3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Brewed Coffee">
+                                            </div>
+                                            <div class="service-content">
+                                              <h3>Brewed Coffee</h3>
+                                                <p>Experience the pure expression of our beans through carefully calibrated brewing methods.</p>
+                                              </div>
+                                            </div>
+                                            <div class="service-card">
+                                              <div class="service-img">
+                                                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Espresso Drinks">
+                                              </div>
+                                              <div class="service-content">
+                                                <h3>Espresso-Based Drinks</h3>
+                                                  <p>From classic espresso to creative specialty drinks, our baristas craft each cup with precision.</p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </section>
+                                        
+                                        <!-- About -->
+                                        <section class="about" id="about">
+                                          <div class="container">
+                                            <div class="about-content">
+                                              <div class="about-text">
+                                                <h2>Our Story</h2>
+                                                  <p>Shot Tower Coffee was born from a passion for exceptional coffee and a commitment to craftsmanship. Our name pays homage to the precision and artistry of pulling the perfect espresso shot.</p>
+                                                  <p>We believe that great coffee starts with great beans, which is why we're dedicated to sourcing the finest quality coffee from sustainable farms around the world. Our small-batch roasting process ensures that each bean reaches its full potential.</p>
+                                                  <p>More than just a coffee shop, we're a community hub where coffee enthusiasts can gather, learn, and share their love for exceptional coffee.</p>
+                                                  <a href="#contact" class="btn">Visit Us Today</a>
+                                                  </div>
+                                                  <div class="about-img">
+                                                    <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Shot Tower Coffee Interior">
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </section>
+                                            
+                                            <!-- Testimonials -->
+                                            <section class="testimonials" id="testimonials">
+                                              <div class="container">
+                                                <div class="section-header">
+                                                  <h2>What Our Customers Say</h2>
+                                                    <p>Don't just take our word for it - hear from our coffee community</p>
+                                                  </div>
+                                                  <div class="testimonials-slider">
+                                                    <div class="testimonial active">
+                                                      <p class="testimonial-text">"The best coffee I've had in the city! The attention to detail in both the roasting and preparation is exceptional. I can truly taste the difference that craftsmanship makes."</p>
+                                                        <p class="testimonial-author">- Sarah M., Regular Customer</p>
+                                                        </div>
+                                                        <div class="testimonial">
+                                                          <p class="testimonial-text">"As a coffee enthusiast, I'm always searching for quality beans. Shot Tower's single-origin selections are consistently outstanding. Their baristas are incredibly knowledgeable too!"</p>
+                                                            <p class="testimonial-author">- Michael T., Coffee Connoisseur</p>
+                                                            </div>
+                                                            <div class="testimonial">
+                                                              <p class="testimonial-text">"The atmosphere is warm and inviting, perfect for working or catching up with friends. Plus, their espresso is consistently perfect - smooth, rich, and full of flavor."</p>
+                                                                <p class="testimonial-author">- Jessica L., Local Professional</p>
+                                                                </div>
+                                                                <div class="testimonial-controls">
+                                                                  <div class="testimonial-dot active" data-slide="0">
+                                                                  </div>
+                                                                  <div class="testimonial-dot" data-slide="1">
+                                                                  </div>
+                                                                  <div class="testimonial-dot" data-slide="2">
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                          </section>
+                                                          
+                                                          <!-- Gallery -->
+                                                          <section class="gallery" id="gallery">
+                                                            <div class="container">
+                                                              <div class="section-header">
+                                                                <h2>Our Coffee Journey</h2>
+                                                                  <p>Take a visual tour of our craft coffee process and inviting space</p>
+                                                                </div>
+                                                                <div class="gallery-grid">
+                                                                  <div class="gallery-item">
+                                                                    <img src="https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Coffee Beans">
+                                                                    <div class="gallery-overlay">
+                                                                      <h3>Premium Beans</h3>
+                                                                      </div>
+                                                                    </div>
+                                                                    <div class="gallery-item">
+                                                                      <img src="https://images.unsplash.com/photo-1517701604592-3e1d0b8a4a72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Roasting Process">
+                                                                      <div class="gallery-overlay">
+                                                                        <h3>Artisan Roasting</h3>
+                                                                        </div>
+                                                                      </div>
+                                                                      <div class="gallery-item">
+                                                                        <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Brewing">
+                                                                        <div class="gallery-overlay">
+                                                                          <h3>Precise Brewing</h3>
+                                                                          </div>
+                                                                        </div>
+                                                                        <div class="gallery-item">
+                                                                          <img src="https://images.unsplash.com/photo-1554118813-7d8afa6b79cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Cafe Atmosphere">
+                                                                          <div class="gallery-overlay">
+                                                                            <h3>Cozy Atmosphere</h3>
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
+                                                                    </section>
+                                                                    
+                                                                    <!-- FAQ -->
+                                                                    <section class="faq">
+                                                                      <div class="container">
+                                                                        <div class="section-header">
+                                                                          <h2>Frequently Asked Questions</h2>
+                                                                            <p>Get answers to common questions about our coffee and services</p>
+                                                                          </div>
+                                                                          <div class="faq-items">
+                                                                            <div class="faq-item">
+                                                                              <div class="faq-question">Where do you source your coffee beans?</div>
+                                                                                <div class="faq-answer">
+                                                                                  <p>We source our beans from sustainable farms around the world, focusing on regions known for exceptional coffee quality. We prioritize direct trade relationships to ensure fair compensation for farmers and the highest quality beans for our customers.</p>
+                                                                                </div>
+                                                                              </div>
+                                                                              <div class="faq-item">
+                                                                                <div class="faq-question">Do you offer coffee subscriptions?</div>
+                                                                                  <div class="faq-answer">
+                                                                                    <p>Yes! We offer flexible subscription options for our freshly roasted beans. Choose your preferred roast profile and delivery frequency to always have fresh coffee on hand.</p>
+                                                                                  </div>
+                                                                                </div>
+                                                                                <div class="faq-item">
+                                                                                  <div class="faq-question">Can I visit your roasting facility?</div>
+                                                                                    <div class="faq-answer">
+                                                                                      <p>We offer scheduled tours of our roasting facility where you can learn about our process and see our equipment in action. Contact us to schedule a visit.</p>
+                                                                                    </div>
+                                                                                  </div>
+                                                                                  <div class="faq-item">
+                                                                                    <div class="faq-question">Do you offer barista training?</div>
+                                                                                      <div class="faq-answer">
+                                                                                        <p>We offer workshops and training sessions for coffee enthusiasts looking to improve their home brewing skills or learn more about coffee preparation techniques.</p>
+                                                                                      </div>
+                                                                                    </div>
+                                                                                  </div>
+                                                                                </div>
+                                                                              </section>
+                                                                              
+                                                                              <!-- CTA -->
+                                                                              <section class="cta" id="contact">
+                                                                                <div class="container">
+                                                                                  <h2>Ready to Experience Exceptional Coffee?</h2>
+                                                                                    <p>Visit Shot Tower Coffee today and discover why craft matters. Whether you're grabbing a quick espresso or settling in for a tasting experience, we can't wait to share our passion with you.</p>
+                                                                                    <a href="#contact" class="btn">Find Our Location</a>
+                                                                                    </div>
+                                                                                  </section>
+                                                                                  
+                                                                                  <!-- Footer -->
+                                                                                  <footer>
+                                                                                    <div class="container">
+                                                                                      <div class="footer-content">
+                                                                                        <div class="footer-col">
+                                                                                          <h3>Shot Tower Coffee</h3>
+                                                                                            <p>Premium craft coffee roaster and cafe dedicated to exceptional quality and community connection.</p>
+                                                                                            <div class="social-links">
+                                                                                              <a href="#" aria-label="Facebook">f</a>
+                                                                                                <a href="#" aria-label="Instagram">ig</a>
+                                                                                                  <a href="#" aria-label="Twitter">t</a>
+                                                                                                  </div>
+                                                                                                </div>
+                                                                                                <div class="footer-col">
+                                                                                                  <h3>Quick Links</h3>
+                                                                                                    <a href="#hero">Home</a>
+                                                                                                      <a href="#about">About Us</a>
+                                                                                                        <a href="#services">Our Coffee</a>
+                                                                                                          <a href="#testimonials">Testimonials</a>
+                                                                                                            <a href="#contact">Visit Us</a>
+                                                                                                            </div>
+                                                                                                            <div class="footer-col">
+                                                                                                              <h3>Contact Info</h3>
+                                                                                                                <p>📍 Visit our cafe soon!</p>
+                                                                                                                <p>📞 (555) 123-COFFEE</p>
+                                                                                                                <p>✉️ hello@shottowercoffee.com</p>
+                                                                                                                <p>🕒 Mon-Fri: 6:30 AM - 8 PM<br>Sat-Sun: 7 AM - 9 PM</p>
+                                                                                                              </div>
+                                                                                                            </div>
+                                                                                                            <div class="copyright">
+                                                                                                              <p>&copy; 2023 Shot Tower Coffee. All rights reserved. Crafted with ❤️ and ☕</p>
+                                                                                                            </div>
+                                                                                                          </div>
+                                                                                                        </footer>
+                                                                                                        
+                                                                                                        <script>
+                                                                                                          // Mobile Menu Toggle
+                                                                                                          const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+                                                                                                          const navMenu = document.getElementById('navMenu');
+                                                                                                          
+                                                                                                          mobileMenuBtn.addEventListener('click', () => {
+                                                                                                          navMenu.classList.toggle('active');
+                                                                                                          });
+                                                                                                          
+                                                                                                          // Close mobile menu when clicking on a link
+                                                                                                          document.querySelectorAll('.nav-menu a').forEach(link => {
+                                                                                                          link.addEventListener('click', () => {
+                                                                                                          navMenu.classList.remove('active');
+                                                                                                          });
+                                                                                                          });
+                                                                                                          
+                                                                                                          // Header scroll effect
+                                                                                                          window.addEventListener('scroll', () => {
+                                                                                                          const header = document.getElementById('header');
+                                                                                                          if (window.scrollY > 50) {
+                                                                                                          header.classList.add('scrolled');
+                                                                                                          } else {
+                                                                                                          header.classList.remove('scrolled');
+                                                                                                          }
+                                                                                                          });
+                                                                                                          
+                                                                                                          // Testimonial Slider
+                                                                                                          const testimonials = document.querySelectorAll('.testimonial');
+                                                                                                          const dots = document.querySelectorAll('.testimonial-dot');
+                                                                                                          let currentTestimonial = 0;
+                                                                                                          
+                                                                                                          function showTestimonial(index) {
+                                                                                                          testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+                                                                                                          dots.forEach(dot => dot.classList.remove('active'));
+                                                                                                          
+                                                                                                          testimonials[index].classList.add('active');
+                                                                                                          dots[index].classList.add('active');
+                                                                                                          currentTestimonial = index;
+                                                                                                          }
+                                                                                                          
+                                                                                                          dots.forEach((dot, index) => {
+                                                                                                          dot.addEventListener('click', () => {
+                                                                                                          showTestimonial(index);
+                                                                                                          });
+                                                                                                          });
+                                                                                                          
+                                                                                                          // Auto-rotate testimonials
+                                                                                                          setInterval(() => {
+                                                                                                          currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+                                                                                                          showTestimonial(currentTestimonial);
+                                                                                                          }, 5000);
+                                                                                                          
+                                                                                                          // FAQ Accordion
+                                                                                                          const faqItems = document.querySelectorAll('.faq-item');
+                                                                                                          
+                                                                                                          faqItems.forEach(item => {
+                                                                                                          const question = item.querySelector('.faq-question');
+                                                                                                          
+                                                                                                          question.addEventListener('click', () => {
+                                                                                                          // Close all other items
+                                                                                                          faqItems.forEach(otherItem => {
+                                                                                                          if (otherItem !== item) {
+                                                                                                          otherItem.classList.remove('active');
+                                                                                                          }
+                                                                                                          });
+                                                                                                          
+                                                                                                          // Toggle current item
+                                                                                                          item.classList.toggle('active');
+                                                                                                          });
+                                                                                                          });
+                                                                                                          
+                                                                                                          // Smooth scrolling for anchor links
+                                                                                                          document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                                                                                                          anchor.addEventListener('click', function (e) {
+                                                                                                          e.preventDefault();
+                                                                                                          
+                                                                                                          const targetId = this.getAttribute('href');
+                                                                                                          if (targetId === '#') return;
+                                                                                                          
+                                                                                                          const targetElement = document.querySelector(targetId);
+                                                                                                          if (targetElement) {
+                                                                                                          window.scrollTo({
+                                                                                                          top: targetElement.offsetTop - 80,
+                                                                                                          behavior: 'smooth'
+                                                                                                          });
+                                                                                                          }
+                                                                                                          });
+                                                                                                          });
+                                                                                                        </script>
+                                                                                                      </body>
+                                                                                                    </html>
