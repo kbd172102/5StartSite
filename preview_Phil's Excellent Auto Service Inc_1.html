@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phil's Excellent Auto Service Inc | Premium Automotive Care</title>
+  <meta name="description" content="Professional auto repair and maintenance services with decades of experience. Trust Phil's Excellent Auto Service for all your vehicle needs.">
+  <style>
+    :root {
+    --primary: #1a365d;
+    --secondary: #2d3748;
+    --accent: #e53e3e;
+    --background: #f7fafc;
+    --text: #2d3748;
+    --text-light: #718096;
+    --white: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    }
+    
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    
+    html {
+    scroll-behavior: smooth;
+    }
+    
+    body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--background);
+    }
+    
+    .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    }
+    
+    /* Header */
+    header {
+    background: var(--white);
+    box-shadow: var(--shadow);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    }
+    
+    .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    }
+    
+    .logo {
+    height: 50px;
+    }
+    
+    .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    }
+    
+    .nav-menu a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    transition: var(--transition);
+    }
+    
+    .nav-menu a:hover {
+    color: var(--accent);
+    }
+    
+    .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    }
+    
+    /* Hero Section */
+    .hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: var(--white);
+    padding: 120px 0 80px;
+    text-align: center;
+    }
+    
+    .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease;
+    }
+    
+    .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease 0.2s both;
+    }
+    
+    .cta-button {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--white);
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    animation: fadeInUp 1s ease 0.4s both;
+    }
+    
+    .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Trust Bar */
+    .trust-bar {
+    background: var(--white);
+    padding: 2rem 0;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
+    }
+    
+    .trust-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    }
+    
+    .stat {
+    animation: fadeIn 1s ease;
+    }
+    
+    .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    }
+    
+    /* Sections */
+    section {
+    padding: 80px 0;
+    }
+    
+    .section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    }
+    
+    .section-title h2 {
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    }
+    
+    /* Benefits */
+    .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    }
+    
+    .benefit-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+    }
+    
+    .benefit-card:hover {
+    transform: translateY(-5px);
+    }
+    
+    /* Services */
+    .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    }
+    
+    .service-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    }
+    
+    .service-card:hover {
+    transform: translateY(-5px);
+    }
+    
+    /* About */
+    .about-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+    }
+    
+    @media (min-width: 768px) {
+    .about-content {
+    grid-template-columns: 1fr 1fr;
+    }
+    }
+    
+    .about-text h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    }
+    
+    .about-image {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    }
+    
+    .about-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    }
+    
+    /* Testimonials */
+    .testimonials-slider {
+    max-width: 800px;
+    margin: 0 auto;
+    }
+    
+    .testimonial {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin: 0 1rem;
+    text-align: center;
+    }
+    
+    .testimonial-text {
+    font-style: italic;
+    margin-bottom: 1rem;
+    }
+    
+    .testimonial-author {
+    font-weight: 600;
+    color: var(--primary);
+    }
+    
+    /* Gallery */
+    .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    }
+    
+    .gallery-item {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    }
+    
+    .gallery-item:hover {
+    transform: scale(1.05);
+    }
+    
+    .gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    }
+    
+    /* FAQ */
+    .faq-item {
+    background: var(--white);
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    }
+    
+    .faq-question {
+    padding: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    }
+    
+    .faq-answer {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    }
+    
+    .faq-item.active .faq-answer {
+    max-height: 200px;
+    padding-bottom: 1.5rem;
+    }
+    
+    /* CTA */
+    .cta-section {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: var(--white);
+    text-align: center;
+    padding: 80px 0;
+    }
+    
+    .cta-section h2 {
+    margin-bottom: 1rem;
+    }
+    
+    /* Footer */
+    footer {
+    background: var(--secondary);
+    color: var(--white);
+    padding: 60px 0 20px;
+    }
+    
+    .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+    }
+    
+    .footer-section h3 {
+    margin-bottom: 1rem;
+    }
+    
+    .footer-section a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: var(--transition);
+    }
+    
+    .footer-section a:hover {
+    color: var(--white);
+    }
+    
+    .copyright {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #4a5568;
+    color: var(--text-light);
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+    from {
+    opacity: 0;
+    transform: translateY(30px);
+    }
+    to {
+    opacity: 1;
+    transform: translateY(0);
+    }
+    }
+    
+    @keyframes fadeIn {
+    from {
+    opacity: 0;
+    }
+    to {
+    opacity: 1;
+    }
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+    .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    padding: 1rem;
+    }
+    
+    .nav-menu.active {
+    display: flex;
+    }
+    
+    .mobile-menu-btn {
+    display: block;
+    }
+    
+    .hero h1 {
+    font-size: 2rem;
+    }
+    
+    section {
+    padding: 60px 0;
+    }
+    }
+  </style>
+</head>
+<body>
+<!-- Header -->
+<header>
+<div class="container nav-container">
+  <img src="https://tempfile.redpandaai.co/kieai/705999/images/downloaded/Phil's_Excellent_Auto_Service_Inc_logo.png" alt="Phil's Excellent Auto Service Inc logo" class="logo">
+  <button class="mobile-menu-btn">☰</button>
+    <ul class="nav-menu">
+      <li>
+        <a href="#home">Home</a>
+        </li>
+        <li>
+          <a href="#services">Services</a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#testimonials">Testimonials</a>
+              </li>
+              <li>
+                <a href="#gallery">Gallery</a>
+                </li>
+                <li>
+                  <a href="#contact">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </header>
+            
+            <!-- Hero Section -->
+            <section id="home" class="hero">
+              <div class="container">
+                <h1>Expert Auto Service You Can Trust</h1>
+                  <p>Professional automotive care with decades of experience. Your vehicle deserves the best, and that's exactly what we deliver.</p>
+                  <a href="#contact" class="cta-button">Schedule Service Today</a>
+                  </div>
+                </section>
+                
+                <!-- Trust Bar -->
+                <section class="trust-bar">
+                  <div class="container">
+                    <div class="trust-stats">
+                      <div class="stat">
+                        <div class="stat-number">25+</div>
+                          <div>Years Experience</div>
+                          </div>
+                          <div class="stat">
+                            <div class="stat-number">10,000+</div>
+                              <div>Cars Serviced</div>
+                              </div>
+                              <div class="stat">
+                                <div class="stat-number">98%</div>
+                                  <div>Customer Satisfaction</div>
+                                  </div>
+                                  <div class="stat">
+                                    <div class="stat-number">24/7</div>
+                                      <div>Emergency Service</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </section>
+                                
+                                <!-- Benefits -->
+                                <section class="benefits">
+                                  <div class="container">
+                                    <div class="section-title">
+                                      <h2>Why Choose Us</h2>
+                                        <p>Experience the difference with our premium auto service</p>
+                                      </div>
+                                      <div class="benefits-grid">
+                                        <div class="benefit-card">
+                                          <h3>Expert Technicians</h3>
+                                            <p>Our certified technicians have decades of combined experience working on all makes and models.</p>
+                                          </div>
+                                          <div class="benefit-card">
+                                            <h3>Quality Parts</h3>
+                                              <p>We use only OEM and high-quality aftermarket parts to ensure your vehicle's longevity.</p>
+                                            </div>
+                                            <div class="benefit-card">
+                                              <h3>Fair Pricing</h3>
+                                                <p>Competitive prices with no hidden fees. We provide detailed estimates before any work begins.</p>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </section>
+                                        
+                                        <!-- Services -->
+                                        <section id="services" class="services">
+                                          <div class="container">
+                                            <div class="section-title">
+                                              <h2>Our Services</h2>
+                                                <p>Comprehensive automotive solutions for your vehicle</p>
+                                              </div>
+                                              <div class="services-grid">
+                                                <div class="service-card">
+                                                  <h3>Preventive Maintenance</h3>
+                                                    <p>Regular maintenance to keep your vehicle running smoothly and prevent costly repairs.</p>
+                                                  </div>
+                                                  <div class="service-card">
+                                                    <h3>Brake Services</h3>
+                                                      <p>Complete brake inspection, repair, and replacement services for your safety.</p>
+                                                    </div>
+                                                    <div class="service-card">
+                                                      <h3>Engine Repair</h3>
+                                                        <p>Expert diagnosis and repair of engine issues to restore performance and efficiency.</p>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </section>
+                                                
+                                                <!-- About -->
+                                                <section id="about" class="about">
+                                                  <div class="container">
+                                                    <div class="section-title">
+                                                      <h2>About Us</h2>
+                                                      </div>
+                                                      <div class="about-content">
+                                                        <div class="about-text">
+                                                          <h3>Your Trusted Auto Service Partner</h3>
+                                                            <p>With over 25 years of experience in the automotive industry, Phil's Excellent Auto Service Inc has built a reputation for excellence and reliability. We take pride in providing top-quality service that keeps our customers coming back year after year.</p>
+                                                            <p>Our team of certified technicians is committed to delivering honest, transparent service with a focus on customer satisfaction. We treat every vehicle as if it were our own, ensuring the highest standards of workmanship.</p>
+                                                          </div>
+                                                          <div class="about-image">
+                                                            <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Auto repair shop interior">
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </section>
+                                                    
+                                                    <!-- Testimonials -->
+                                                    <section id="testimonials" class="testimonials">
+                                                      <div class="container">
+                                                        <div class="section-title">
+                                                          <h2>What Our Customers Say</h2>
+                                                          </div>
+                                                          <div class="testimonials-slider">
+                                                            <div class="testimonial">
+                                                              <p class="testimonial-text">"Phil's team did an amazing job on my car! They were honest, professional, and completed the work ahead of schedule. I'll definitely be back for all my auto needs."</p>
+                                                                <p class="testimonial-author">- Sarah Johnson</p>
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                          </section>
+                                                          
+                                                          <!-- Gallery -->
+                                                          <section id="gallery" class="gallery">
+                                                            <div class="container">
+                                                              <div class="section-title">
+                                                                <h2>Our Work</h2>
+                                                                </div>
+                                                                <div class="gallery-grid">
+                                                                  <div class="gallery-item">
+                                                                    <img src="https://images.unsplash.com/photo-1603712610496-5365ec345f6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Engine repair">
+                                                                  </div>
+                                                                  <div class="gallery-item">
+                                                                    <img src="https://images.unsplash.com/photo-1603712610496-5365ec345f6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Brake service">
+                                                                  </div>
+                                                                  <div class="gallery-item">
+                                                                    <img src="https://images.unsplash.com/photo-1603712610496-5365ec345f6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Auto maintenance">
+                                                                  </div>
+                                                                  <div class="gallery-item">
+                                                                    <img src="https://images.unsplash.com/photo-1603712610496-5365ec345f6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Quality service">
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                            </section>
+                                                            
+                                                            <!-- FAQ -->
+                                                            <section class="faq">
+                                                              <div class="container">
+                                                                <div class="section-title">
+                                                                  <h2>Frequently Asked Questions</h2>
+                                                                  </div>
+                                                                  <div class="faq-items">
+                                                                    <div class="faq-item">
+                                                                      <div class="faq-question">
+                                                                        What types of vehicles do you service?
+                                                                        <span>+</span>
+                                                                        </div>
+                                                                        <div class="faq-answer">
+                                                                          We service all makes and models of cars, trucks, and SUVs. Our technicians are trained to work on both domestic and import vehicles.
+                                                                        </div>
+                                                                      </div>
+                                                                      <div class="faq-item">
+                                                                        <div class="faq-question">
+                                                                          How long do repairs typically take?
+                                                                          <span>+</span>
+                                                                          </div>
+                                                                          <div class="faq-answer">
+                                                                            Repair times vary depending on the service needed. Most routine maintenance can be completed within a few hours, while major repairs may take 1-2 days. We'll provide you with an accurate timeline during your initial assessment.
+                                                                          </div>
+                                                                        </div>
+                                                                        <div class="faq-item">
+                                                                          <div class="faq-question">
+                                                                            Do you offer warranties on your work?
+                                                                            <span>+</span>
+                                                                            </div>
+                                                                            <div class="faq-answer">
+                                                                              Yes! We stand behind all our work with a comprehensive warranty. Parts and labor are covered to ensure your complete satisfaction.
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
+                                                                    </section>
+                                                                    
+                                                                    <!-- CTA -->
+                                                                    <section id="contact" class="cta-section">
+                                                                      <div class="container">
+                                                                        <h2>Ready for Excellent Auto Service?</h2>
+                                                                          <p>Contact us today to schedule an appointment or get a free estimate</p>
+                                                                          <a href="tel:555-123-4567" class="cta-button">Call Now: (555) 123-4567</a>
+                                                                          </div>
+                                                                        </section>
+                                                                        
+                                                                        <!-- Footer -->
+                                                                        <footer>
+                                                                          <div class="container">
+                                                                            <div class="footer-content">
+                                                                              <div class="footer-section">
+                                                                                <h3>Contact Info</h3>
+                                                                                  <p>123 Auto Service Lane</p>
+                                                                                  <p>City, State 12345</p>
+                                                                                  <p>Phone: (555) 123-4567</p>
+                                                                                  <p>Email: info@philsautoservice.com</p>
+                                                                                </div>
+                                                                                <div class="footer-section">
+                                                                                  <h3>Business Hours</h3>
+                                                                                    <p>Monday-Friday: 7:00 AM - 6:00 PM</p>
+                                                                                    <p>Saturday: 8:00 AM - 4:00 PM</p>
+                                                                                    <p>Sunday: Closed</p>
+                                                                                  </div>
+                                                                                  <div class="footer-section">
+                                                                                    <h3>Quick Links</h3>
+                                                                                      <a href="#home">Home</a>
+                                                                                        <br>
+                                                                                        <a href="#services">Services</a>
+                                                                                          <br>
+                                                                                          <a href="#about">About</a>
+                                                                                            <br>
+                                                                                            <a href="#contact">Contact</a>
+                                                                                            </div>
+                                                                                          </div>
+                                                                                          <div class="copyright">
+                                                                                            <p>&copy; 2024 Phil's Excellent Auto Service Inc. All rights reserved.</p>
+                                                                                          </div>
+                                                                                        </div>
+                                                                                      </footer>
+                                                                                      
+                                                                                      <script>
+                                                                                        // Mobile Menu Toggle
+                                                                                        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+                                                                                        document.querySelector('.nav-menu').classList.toggle('active');
+                                                                                        });
+                                                                                        
+                                                                                        // FAQ Accordion
+                                                                                        document.querySelectorAll('.faq-question').forEach(question => {
+                                                                                        question.addEventListener('click', () => {
+                                                                                        const item = question.parentElement;
+                                                                                        item.classList.toggle('active');
+                                                                                        });
+                                                                                        });
+                                                                                        
+                                                                                        // Smooth scrolling for navigation links
+                                                                                        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                                                                                        anchor.addEventListener('click', function (e) {
+                                                                                        e.preventDefault();
+                                                                                        const target = document.querySelector(this.getAttribute('href'));
+                                                                                        if (target) {
+                                                                                        target.scrollIntoView({
+                                                                                        behavior: 'smooth',
+                                                                                        block: 'start'
+                                                                                        });
+                                                                                        }
+                                                                                        });
+                                                                                        });
+                                                                                        
+                                                                                        // Header scroll effect
+                                                                                        window.addEventListener('scroll', function() {
+                                                                                        const header = document.querySelector('header');
+                                                                                        if (window.scrollY > 100) {
+                                                                                        header.style.background = 'rgba(255, 255, 255, 0.95)';
+                                                                                        } else {
+                                                                                        header.style.background = 'var(--white)';
+                                                                                        }
+                                                                                        });
+                                                                                      </script>
+                                                                                    </body>
+                                                                                  </html>
